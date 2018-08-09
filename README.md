@@ -18,11 +18,47 @@ Done in Scrum with a Sprint of two weeks .
 
 # Homepage
 
-- details
+- details:
+button Start (link to game) / About (games rules) / Team <p> team introduction 
+ h1 -> game's title 
+ div -> including the About / Team content.
+Jquery 
+css flexbox 
+  
+number of points: 3
 
-# Room 1: Children's memories
+
+# Template
 
 - details
+div -> display Fibonnacci sequence / animation when number appears in room
+div -> toggle sideway , blinking icon (animation) => rules are displayed
+no animation on icon once clicked. 
+3 hearts => pictures , vanishing everytime one (1) life is removed
+0 life => return to Room 1. 
+Button Arrow => link to next room : function in JS, appearing once the room's enigma is solved. 
+Chrono : progress bar (( to see https://loading.io/progress/ )) 
+local storage to keep chrono data on every room (to prevent chrono refresh upon changing room)
+pop up victory / loss 
+adds fake item each time the room's enigma is solved (function Fibo)
+
+number of points: 8
+
+# Room 1: Children's memories (Marcy)
+
+- details
+function Random
+4 variables / pictures
+1 variable = image + random value
+
+flex container div
+input to insert resultat <- keypress to enter only numbers
+4th result => checking's function, function Level of diffuclty => Valider Button
+last level displays arrow for next room
+
+fill victory/loss pop up's text content.
+
+number of points: 3
 
 # Room 2: Question Mark
 
