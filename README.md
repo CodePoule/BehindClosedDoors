@@ -60,24 +60,94 @@ fill victory/loss pop up's text content.
 
 number of points: 3
 
-# Room 2: Question Mark
+# Room 2: Question Mark (Shéra)
 
 - details
+10 questions : True or False answers / radio buttons
+if answer : true -> next question appears
+if 10th question : true => arrow for next level appears
 
-# Room 3: Piece of Work
-
-- details
-
-# Room 4: Passenger in the Dark
-
-- details
-
-# Room 5: Space Anarchy
-
-- details
-
-# Room 6: The Last of Computers
-
-- details
+Array of object : 
+ - question
+ - answer
+ = List of 20 questions chosen randomly
  
+Counter of remaining questions. 
+
+fill text in pop up victory/loss
+
+number of points: 3
+  
+
+# Room 3: Piece of Work (Jean)
+
+- details
+(add website's link for the puzzle)
+div container puzzle
+Array of pictures with a random on it 
+number of moves limited. function js decrement linked to the Life function
+
+fill text for victory/loss pop up
+
+number of points: 3
+
+# Room 4: Passenger in the Dark (Céline)
+
+- details
+video bg fullscreen 
+includes hints of the Enigma at given points during the video. (images of 'monsters' included inside the video)
+-> pop ups appearing when the monster does too. Video pauses ( around 5s ) 
+input to have the user enter the Enigma's answer. 
+if condition : answer entered = answer
+if answer : false = loss of 1 life
+if only 1 life remaining => pop up of one hint to help
+button Valider appearing at the end of the video.
+
+number of points: 5 
+
+# Room 5: Space Anarchy (Marie)
+
+- details
+(add more details later)
+function random [o , 3 ]
+Empty Array that get filled by the Random function (Sequence Array)
+Loop For to fill the Sequence Array
+
+Colors or Images(à choisir): lights on/off => in an Array 
+Compairing function between Arrays user / Sequence
+-> event click: when user click on color -> fills user Array
+
+function to control colors lights on/off
+-> Set Time Out on Sequence Array to control on/off lights state.
+
+number of points: 8
+(refinement planned later)
+
+# Room 6: The Last of Computers (Cass)
+
+- details
+input to allow the user to enter the last number of the Fake Items Sequence.
+animation on the Sequence going from top of the screen to the computer's container in the middle of the screen.
+keypress sur F5 & Ctrl R -> pop up to tell the user NOT to cheat
+Big countdown (LCD way) (around 60s)
+if countdown = 0 -> return to Room 1 
+if correct number guessed => blue screen on little computer + fade to black in fullscreen and goes to Secret room
+
+fade to black depending of the chrono. if time = 0 -> black screen
+
+number of points: 3
  
+# Secret Room (Owl Squad)
+
+-details
+cursor in magnifier glass
+6 True Items placed over paintings of each former rooms. Hidden (display: none) 
+-> hover on the paintings that reveal the items
+on click on items IN the right order = item vanishes from the painting and appears on the central painting
+if wrong order :
+- only 1 life on this room: return room 1
+- 0 life remaining: pop up Game Over
+if victory => pop up video fullscreen of an open door 
+animation on heart : beating heart + audio bpm 
+
+number of points: 5 
