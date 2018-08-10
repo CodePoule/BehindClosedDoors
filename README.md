@@ -12,7 +12,42 @@ Done in Scrum with a Sprint of two weeks .
  
  # Rules of the Game
  
-- to do 
+60 min chrono. 
+3 lifes. 
+La vie se reset à chaque nouvelle salle. 
+1 erreur lors de la resolution des enigmes = une perte de vie. Lorque toutes les vies ont été consommées = retour salle 1.
+le chrono est global. si chrono = 0 alors Game Over. 
+le passage d'une salle à l'autre ne s'effectue que lorsque l'enigme de la salle a été résolue. 
+Chaque fois qu'une salle est complétée un item est attribué, vous devez récolter un total de 6 items pour completer le jeu.
+
+    _rules room 1: Children's Memories
+
+Pour finir cette salle, tu as besoin de résoudre ces calculs sur trois niveaux de difficulté.
+
+    _rules room 2: Question Mark
+
+Pour finir cette salle, tu devras répondre à 10 questions. Attention, tu dois cependant répondre correctement à 8 questions. 
+
+    _rules room 3: Piece of Work
+
+Pour finir cette salle, tu devras completer correctement un puzzle, il y a trois niveaux de difficulté . Attention ! tu as un nombre de déplacements limités (à definir). 
+
+    _rules room 4: Passenger in the Dark
+
+Boo! te voilà passager dans un train à destination inconnue. Pour t'en sortir il te faudra répondre à une énigme. Soit attentif aux indices apparaissant au long du voyage. 
+
+    _rules room 5: Space Anarchy!
+    
+Accident ! ! ! Lors d'un voyage dans la station spatiale l'Intelligence Artificielle a prit le contrôle. Vite! Tu devras trouver la bonne combinaison de couleur afin de pouvoir t'échapper et retourner sur la Terre! 
+
+    _rules room 6: The Last of Computers
+    
+De retour sur la Terre ! mais il semblerait que tu as voyagé dans le temps à un siècle inquiétant. Pour t'échapper de là tu dois retrouver la bonne combinaison et la rentrer dans le dernier ordinateur ayant survecu à l'apocalypse. Sois rapide ! car le compte à rebours à commencé. 
+
+    _rules Secret Room: The Court
+
+MUAHAHAHAHAHAHA ! ! ! ! Tu as été dupé, regarde autour de toi dans l'espoir de trouver un moyen de sortir. Tes souvenirs peuvent t'aider.
+
 
                                           *** Structure of the Game *** 
 
@@ -119,6 +154,8 @@ Compairing function between Arrays user / Sequence
 
 function to control colors lights on/off
 -> Set Time Out on Sequence Array to control on/off lights state.
+
+-> include in Victory Pop up: "Attention! la prochaine salle à un temps limité etc..." 
 
 number of points: 8
 (refinement planned later)
