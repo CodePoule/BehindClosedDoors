@@ -1,6 +1,26 @@
+/* CSS Homepage */
+
 body{
-    width: 100%;
+    width: 70%;
     margin: 0;
+}
+
+nav{
+    position: fixed;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 0 150px 0;
+    justify-content: center;
+}
+
+button{
+    margin: 40px 0 40px 0;
+}
+
+h1, #titre{
+    color: #FFFFFF;
 }
 
 #background{
@@ -9,4 +29,8 @@ body{
     right: 0;
     z-index: -100;
     width: 100%;
+}
+
+.logo-team{
+    max-width: 100px;
 }
