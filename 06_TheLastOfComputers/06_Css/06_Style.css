@@ -1,0 +1,10 @@
+html {
+    background: url("../06_Img/06_Bg.png") no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    /*background-size: cover;*/
+}
+
+
+
+
