@@ -1,0 +1,18 @@
+body{
+    display: flex;
+}
+
+/*image du coeur / non aligné encore. en attente d'intégration du reste du code*/
+.life{
+    margin: 10px auto 0 auto;
+    animation: heartbeat 1.6s infinite linear;
+}
+/*animation sur le coeur */
+@keyframes heartbeat {
+    from{
+        transform: scale(1.0);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
