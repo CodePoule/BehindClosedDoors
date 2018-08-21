@@ -1,6 +1,71 @@
+/* CSS Homepage */
+
 body{
     width: 100%;
     margin: 0;
+    background: black;
+}
+
+nav{
+    position: fixed;
+    /*left: -30px;*/
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: -100px 0 150px 0;
+    justify-content: center;
+}
+
+button{
+    margin: 40px 0 40px 0;
+    color: #FFFFFF;
+    text-shadow: 0 -1px 4px #7a7a7a, 0 -2px 10px #ffff00, 0 -10px 20px #ffce00, 0 -18px 40px #ff8000, 0 -24px 50px #F00;
+    backface-visibility: hidden;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+    background: linear-gradient(180deg, #a2a2a2 0%, #6d6d6d 49%,#444444 100%);
+    border-radius: 5px;
+    border: 0;
+    padding: 25px 30px 15px 50px;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: normal;
+    transition: all 1s;
+    text-align: right;
+}
+
+button:hover{
+    background: linear-gradient(180deg,#444444 0%, #6d6d6d 49%, #a2a2a2 100%);
+    transform: translateX(18px);
+}
+
+h1, #titre{
+    color: #FFFFFF;
+    text-align: center;
+    font-family: "Barn Owl";
+    font-size: 50px;
+}
+
+#btn-start{
+    left: -20px;
+}
+
+#btn-rules{
+    left: -65px;
+}
+
+#bouton-team{
+    left: -105px;
+}
+
+.logo-team{
+    transition: all 2s;
+}
+
+.logo-team:hover{
+    transform: rotateZ(360deg);
 }
 
 #background{
@@ -9,4 +74,50 @@ body{
     right: 0;
     z-index: -100;
     width: 100%;
+}
+
+.logo-team{
+    max-width: 100px;
+}
+
+.links{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* Div Pop à réutiliser sur chaque salle*/
+#flex-pop-div{
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#pop-div{
+    background-image: url("../img/test.png");
+    width: 760px;
+    height: 432px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#titre-div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20px 20px 0 20px;
+}
+
+#h2-pop-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#paragraph-pop-div{
+    padding: 20px;
 }
