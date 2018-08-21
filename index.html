@@ -5,6 +5,10 @@
     <title>Behind Closed Doors - Home</title>
     <!-- Style Home Page -->
     <link rel="stylesheet" href="00_Homepage/Css/00_Style.css">
+    <!-- Fonts / Typographies -->
+    <link rel="stylesheet" href="fonts/stylesheet.css">
+    <!-- Font Awsome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 <body>
 
@@ -14,21 +18,31 @@
 <div id="flex-container">
     <h1 id="titre">Behind Closed Doors</h1>
     <nav>
-        <button>
-            Commencer le Jeu
+        <button id="btn-start">
+            <a href="01_ChildrensMemories/01_Index.html" class="links">
+                Commencer le Jeu
+            </a>
         </button>
-        <button>
+        <button id="btn-rules">
             Règles du Jeu
         </button>
         <button id="bouton-team">
             <img src="00_Homepage/Img/00_LogoTeam.png" alt="Logo Owl'Squad" class="logo-team">
         </button>
     </nav>
-    <div id="rules">
-        <h2 class="titre-regles">Titre règles</h2>
-        <p class="paragraph-regles"></p>
+    <div id="flex-pop-div">
+        <div id="pop-div">
+            <div id="titre-div">
+                <div id="h2-pop-div"><h2 class="titre-pop-div"><!-- Titre div pop --></h2></div>
+                <i class="fas fa-times fermer-div"></i>
+            </div>
+            <p id="paragraph-pop-div"><!-- Contenu de la div Pop --></p>
+        </div>
     </div>
 </div>
+
+
+
 
 <!-- Script Homepage -->
 <script src="00_Homepage/Js/00_Main.js"></script>
