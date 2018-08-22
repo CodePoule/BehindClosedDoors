@@ -1,5 +1,5 @@
 body {
-    background-image: url(http://braccousa.com/wp-content/uploads/2013/07/Dark-wooden-website-background.jpg);
+    /*background-image: url(http://braccousa.com/wp-content/uploads/2013/07/Dark-wooden-website-background.jpg);*/
     background-size: cover;
 }
 .noSelect {
@@ -57,14 +57,14 @@ body {
     border-radius:0 0 100% 0 ;
 }
 #center {
-    position:absolute;
-    background-color:white;
+    position: absolute;
+    background-color: white;
     border: 20px solid grey;
-    width:200px;
-    height:200px;
-    top:120px;
-    left:120px;
-    border-radius:50%;
+    width: 182px;
+    height: 182px;
+    top: 118px;
+    left: 113px;
+    border-radius: 50%
 }
 #textTitle {
     height: 70px;
@@ -77,22 +77,25 @@ body {
 #countBox {
     vertical-align: top;
     display: inline-block;
-    height: 50px;
-    width: 50.3px;
+    height: 34px;
+    width: 0.3px;
+    margin-top: 111px;
+    margin-left: 74px;
 }
 #countDisplay {
     border: solid 3px black;
     border-radius: 20%;
-    height: 50%;
-    margin: 0px 6px 0px 6px;
+    height: 27px;
+    width: 60px;
+    margin: 2px 14px 10px -12px;
     background: red;
     font-size: 20px;
-    line-height: 20px;
+    line-height: 27px;
     text-align: center;
 }
 #countText {
     height: 30%;
-    margin: 4px 6px 0px 6px;
+    margin: -7px 7px 0px 10px;
     font-size: 10px;
     color: black;
     font-weight: bold;
@@ -110,8 +113,8 @@ body {
 #startButton {
     border: solid 3px black;
     border-radius: 50%;
-    height: 50%;
-    margin: 0px 12.7px 0px 12.7px;
+    height: 70%;
+    margin: 45px -16px -25px -34px;
     background: red;
     font-size: 20px;
     line-height: 17px;
@@ -119,7 +122,7 @@ body {
 }
 #startText {
     height: 30%;
-    margin: 4px 6px 0px 6px;
+    margin: 1px 75px 0px 6px;
     font-size: 10px;
     color: black;
     font-weight: bold;
