@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="Css/05_Style.css">
+</head>
+<body>
+
+<!--liens vers l'audio pour chaque bouton et si erreur-->
+<audio id="soundbuttonGre" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
+<audio id="soundbuttonRed" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
+<audio id="soundbuttonYel" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
+<audio id="soundbuttonBlu" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
+<audio id="soundbuttonWrong" src="http://www.freesound.org/data/previews/331/331912_3248244-lq.mp3"></audio>
+
+<div class="gameContainer noSelect">
+    <!-- 4 boutons de couleur-->
+    <div id="buttonGre" class="fourButton"></div>
+    <div id="buttonRed" class="fourButton"></div>
+    <div id="buttonYel" class="fourButton"></div>
+    <div id="buttonBlu" class="fourButton"></div>
+    <!--AU CENTRE DU JEU-->
+    <div id="center">
+
+        <div id="textTitle">Simon</div>
+        <!--div pour compteur difficulté / nombre de clics à faire-->
+        <div id="countBox">
+            <!--affichage du compteur-->
+            <div id="countDisplay">
+                <!--affichage du texte (nombre de clics à faire)-->
+                <div id="displayText">
+                    --
+                </div>
+            </div>
+            <!--affichage du titre du compteur "Count"-->
+            <div id="countText">Level</div>
+        </div>
+        <!--bouton start-->
+        <div id="startBox">
+            <!--div <=> bouton radio-->
+            <div id="startButton"></div>
+            <!--texte: Start-->
+            <div id="startText">Start</div>
+        </div>
+        <!--mode strict: option => si erreur, retour au debut du jeu-->
+    </div>
+</div>
+
+<script src="Js/jquery-3.3.1.min.js"></script>
+<script src="Js/05_Main.js"></script>
+
+</body>
+</html>
