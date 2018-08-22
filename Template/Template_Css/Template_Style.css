@@ -1,5 +1,19 @@
 body {
     transition: background-color .5s;
+    display: inline;
+
+}
+
+.vie{
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.fleche {
+    float: right;
+    margin-top: 20%;
+    margin-left: 95%;
 }
 
 p{
