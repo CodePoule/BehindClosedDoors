@@ -79,7 +79,6 @@ function setCanvas(){
     stage = puzzle.getContext('2d');
     puzzle.width = puzzleWidth;
     puzzle.height = puzzleHeight;
-    puzzle.style.border = "1px solid black"; // à retirer à la fin
 }
 
 // Division images
