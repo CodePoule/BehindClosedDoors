@@ -1,5 +1,5 @@
 // A piece of work JS
-const PUZZLE_DIFFICULTY = 4; // A MODIFIER UNE FOIS QUE ÇA MARCHE
+let PUZZLE_DIFFICULTY = 3; // A MODIFIER UNE FOIS QUE ÇA MARCHE
 const PUZZLE_HOVER_TINT = '#009900';
 
 let puzzle/* = document.querySelector('#puzzle')*/; // canvas
@@ -16,11 +16,61 @@ let currentDropPiece;
 
 let mouse;
 
+let puzzleFacile = false;
+let puzzleMoyen = false;
+let puzzleDifficile = false;
+
+// Objet images pour le puzzle
+function ImgPuzzle(index, imgURL) {
+    this.index = index;
+    this.imgURL = imgURL;
+}
+
+// images qui seront utilisées dans le puzzle
+let Franky1 = new ImgPuzzle(1, "03_Img/03_franky01.png");
+let Franky2 = new ImgPuzzle(2, "03_Img/03_franky02.png");
+let Franky3 = new ImgPuzzle(3, "03_Img/03_franky03.png");
+let Franky4 = new ImgPuzzle(4, "03_Img/03_franky04.png");
+let Franky5 = new ImgPuzzle(5, "03_Img/03_franky05.png");
+let Franky6 = new ImgPuzzle(6, "03_Img/03_franky06.png");
+let Franky7 = new ImgPuzzle(7, "03_Img/03_franky07.png");
+let Franky8 = new ImgPuzzle(8, "03_Img/03_franky08.png");
+let Franky9 = new ImgPuzzle(9, "03_Img/03_franky09.png");
+let Franky10 = new ImgPuzzle(10, "03_Img/03_franky10.png");
+
+// Tableau des images sur lequel on effectura le random
+let imgArray = [
+    Franky1.imgURL,
+    Franky2.imgURL,
+    Franky3.imgURL,
+    Franky4.imgURL,
+    Franky5.imgURL,
+    Franky6.imgURL,
+    Franky7.imgURL,
+    Franky8.imgURL,
+    Franky9.imgURL,
+    Franky10.imgURL
+];
+
+// Mélange les url du tableau
+function shuffle(index) {
+    // if this.piochee == 0
+    for (let i = index.length; i; i--) {
+        let nbH = Math.floor(Math.random() * i);
+        [index[i - 1], index[nbH]] = [index[nbH], index[i - 1]];
+        // this.piochee = 1;
+    }
+    // console.log(index);
+}
+
+// FONCTIONS DU PUZZLE
+
 // création du canvas
 function init() {
+    shuffle(imgArray);
     img = new Image();
     img.addEventListener('load',onImage,false);
-    img.src = "03_Img/03_franky01.png";
+    img.src = imgArray[0];
 }
 
 // Configuartion Canvas
@@ -229,52 +279,19 @@ function gameOver(){
     document.onmousedown = null;
     document.onmousemove = null;
     document.onmouseup = null;
+    if (puzzleFacile == true && puzzleMoyen == true && puzzleDifficile == false){
+        puzzleDifficile = true;
+        // Apparition bouton salle suivant + local storage temps !
+    }
+    if (puzzleFacile == true && puzzleMoyen == false && puzzleDifficile == false){
+        puzzleMoyen = true;
+        img.src = imgArray[2]; // image Niveau 3 du puzzle
+        PUZZLE_DIFFICULTY = 5; // Difficulté Niveau 3 du Puzzle
+    }
+    if (puzzleFacile == false && puzzleMoyen == false && puzzleDifficile == false){
+        puzzleFacile = true;
+        img.src = imgArray[1]; // image Niveau 2 du puzzle
+        PUZZLE_DIFFICULTY = 4; // Difficulté du Niveau 2 du puzzle
+    }
     initPuzzle();
 }
-
-// Variables à peut être IMPORT EXPORT
-let popDiv = document.querySelector("#pop-div");
-let titrePopDiv = document.querySelector(".titre-pop-div");
-let pPopDiv = document.querySelector("#paragraph-pop-div");
-let closeDiv = document.querySelector(".fermer-div");
-
-// A DEPLACER EN IMPORT EXPORT v
-
-// fonction alternance display
-function toggle(item, State) {
-    item.style.display = State;
-}
-
-// Opacité initiale de la pop
-popDiv.style.opacity = "0";
-
-// Pop Div caché au départ
-toggle(popDiv, 'none');
-
-// Fonction d'apparition graduelle -> show()
-function fadeIn(item,dureeApparition) { // dureeApparition est en ms soit 1000 ms = 1 seconde
-    let i = 0;
-    let k = window.setInterval(function() {
-        if (i >= 100) {
-            clearInterval(k);
-        } else {
-            item.style.opacity = i/100;
-            i++;
-        }
-    }, dureeApparition);
-}
-
-// Fonction de disparition graduelle -> hide()
-function fadeOut(item,dureeDisparition) { // dureeDisparition est en ms soit 1000 ms = 1 seconde
-    let i = 100;
-    let k = window.setInterval(function() {
-        if (i <= 0) {
-            clearInterval(k);
-        } else {
-            item.style.opacity = i/100;
-            i--;
-        }
-    }, dureeDisparition);
-}
-
-// A DEPLACER EN IMPORT EXPORT ^}
