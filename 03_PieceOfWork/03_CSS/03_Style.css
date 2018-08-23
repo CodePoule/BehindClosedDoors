@@ -1,0 +1,37 @@
+/* JS */
+/* Div Pop à réutiliser sur chaque salle*/
+#flex-pop-div{
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#pop-div{
+    /*background-image: url("../img/00_BackgroungDivPop.png"); !* à déplacer dans dossier template *!*/
+    width: 760px;
+    height: 432px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#titre-div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20px 20px 0 20px;
+}
+
+#h2-pop-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#paragraph-pop-div{
+    padding: 20px;
+}

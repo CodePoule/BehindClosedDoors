@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="03_CSS/03_Style.css">
 </head>
-<body>
+<body onload="init()">
 
+    <div id="flex-container">
+
+        <canvas id="puzzle"></canvas>
+
+        <div id="flex-pop-div">
+            <div id="pop-div">
+                <div id="titre-div">
+                    <div id="h2-pop-div"><h2 class="titre-pop-div"><!-- Titre div pop --></h2></div>
+                    <i class="fas fa-times fermer-div"></i>
+                </div>
+                <div id="paragraph-pop-div"><!-- Contenu de la div Pop --></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script Puzzle -->
+    <script src="03_Js/03_Main.js"></script>
 </body>
 </html>

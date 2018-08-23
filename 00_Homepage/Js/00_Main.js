@@ -1,25 +1,16 @@
 // Variables
-let popDiv = document.querySelector("#pop-div");
-let titrePopDiv = document.querySelector(".titre-pop-div");
-let pPopDiv = document.querySelector("#paragraph-pop-div");
+let popDiv = document.querySelector("#pop-div"); // à déplacer en import export
+let titrePopDiv = document.querySelector(".titre-pop-div"); // à déplacer en import export
+let pPopDiv = document.querySelector("#paragraph-pop-div"); // à déplacer en import export
 let btnRules = document.querySelector("#btn-rules");
 let btnOwlSquad = document.querySelector("#bouton-team");
-let closeDiv = document.querySelector(".fermer-div");
+let closeDiv = document.querySelector(".fermer-div"); // à déplacer en import export
 let flexContainer = document.querySelector("#flex-container");
 let videoBackground = document.querySelector("#background");
-
-// fonction alternance display
-function toggle(item, State) {
-    item.style.display = State;
-}
 
 // Opacité initiale
 flexContainer.style.opacity = "0";
 videoBackground.style.opacity = "0";
-popDiv.style.opacity = "0";
-
-// Pop Div caché au départ
-toggle(popDiv, 'none');
 
 // Fonction d'apparition graduelle pour départ page
 function fadeOnLoad(item1,item2) {
@@ -34,6 +25,19 @@ function fadeOnLoad(item1,item2) {
         }
     }, 10);
 }
+
+// A DEPLACER EN IMPORT EXPORT v
+
+// fonction alternance display
+function toggle(item, State) {
+    item.style.display = State;
+}
+
+// Opacité initiale de la pop
+popDiv.style.opacity = "0";
+
+// Pop Div caché au départ
+toggle(popDiv, 'none');
 
 // Fonction d'apparition graduelle -> show()
 function fadeIn(item,dureeApparition) { // dureeApparition est en ms soit 1000 ms = 1 seconde
@@ -60,6 +64,8 @@ function fadeOut(item,dureeDisparition) { // dureeDisparition est en ms soit 100
         }
     }, dureeDisparition);
 }
+
+// A DEPLACER EN IMPORT EXPORT ^
 
 // Event Listeners
 btnRules.addEventListener("click", function (){

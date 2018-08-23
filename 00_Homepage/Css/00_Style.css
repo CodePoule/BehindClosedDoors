@@ -96,7 +96,7 @@ h1, #titre{
 }
 
 #pop-div{
-    background-image: url("../img/test.png");
+    background-image: url("../img/00_BackgroungDivPop.png"); /* à déplacer dans dossier template */
     width: 760px;
     height: 432px;
     display: flex;
