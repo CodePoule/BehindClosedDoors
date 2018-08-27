@@ -4,8 +4,54 @@
     <meta charset="UTF-8">
     <title>The Last Of Computers</title>
     <link rel="stylesheet" href="06_Css/06_Style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 <body>
 
+
+
+    <!--sidenav des regles-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <p> insert mega important rules to follow at all cost here </p>
+    </div>
+
+    <div id="main">
+        <span onclick="openNav()"><i id="iconRules" class="far fa-question-circle"></i></span>
+    </div>
+
+    <!--vie-->
+    <div class="vie">
+        <img id= "heart1" src="06_Img/Heart.png" height="76" width="76"/>
+        <img id= "heart2" src="06_Img/Heart.png" height="76" width="76"/>
+        <img id= "heart3" src="06_Img/Heart.png" height="76" width="76"/>
+    </div>
+
+    <div id="wrapper">
+
+    <div class="bgContainer">
+
+            <!--countdown-->
+            <div id="clockdiv">
+                <div class="clockWrap">
+                    <span class="minutes"></span>
+                    <span class="smalldots">:</span>
+                    <span class="seconds"></span>
+                </div>
+            </div>
+            <!--fin du countdown-->
+            <!--input pour suite Fibo-->
+            <div class="inputFib">
+                <input type="number" placeholder="Enter the number">
+                <button class="fibBtn">Valider</button>
+            </div>
+
+
+    </div>
+</div>
+
+
+<script src="06_Js/06_Main.js"></script>
 </body>
 </html>
