@@ -29,7 +29,7 @@ function fadeOnLoad(item1,item2) {
 // A DEPLACER EN IMPORT EXPORT v
 
 // fonction alternance display
-function toggle(item, State) {
+function togglevisi(item, State) {
     item.style.display = State;
 }
 
@@ -37,7 +37,7 @@ function toggle(item, State) {
 popDiv.style.opacity = "0";
 
 // Pop Div caché au départ
-toggle(popDiv, 'none');
+togglevisi(popDiv, 'none');
 
 // Fonction d'apparition graduelle -> show()
 function fadeIn(item,dureeApparition) { // dureeApparition est en ms soit 1000 ms = 1 seconde
@@ -73,7 +73,7 @@ btnRules.addEventListener("click", function (){
     titrePopDiv.innerHTML = "Voici le titre des règles du jeu !";
     console.log("regles");
     pPopDiv.innerHTML = "Ici nous mettons les règles du jeu quand elles seront écrites !";
-    toggle(popDiv, "");
+    togglevisi(popDiv, "");
     fadeIn(popDiv,5);
 });
 
@@ -81,7 +81,7 @@ btnOwlSquad.addEventListener("click", function (){
     console.log("titre Team");
     titrePopDiv.innerHTML = "Voici Owl'Squad !";
     pPopDiv.innerHTML = "Ici nous mettons la description de la team/squad quad ça sera défini ^^ !";
-    toggle(popDiv, "");
+    togglevisi(popDiv, "");
     fadeIn(popDiv,5);
 });
 
@@ -89,7 +89,7 @@ closeDiv.addEventListener("click", function (){
     fadeOut(popDiv, 10);
     console.log("pop out");
     setTimeout(function (){
-        toggle(popDiv, "none");
+        togglevisi(popDiv, "none");
         console.log("pop out 2")
     }, 1000)
 });
