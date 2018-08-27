@@ -1,3 +1,47 @@
+// Nom de la salle
+let nomSalle = document.querySelector("#nom-salle");
+nomSalle.innerHTML = "Space Anarchy";
+
+// Save/restore Time
+function sauvegarder(){
+    localStorage.setItem("tempsGlobal",temps);
+}
+function recharger() {
+    if (localStorage.getItem("tempsGlobal")){
+        temps = parseInt(localStorage.getItem("tempsGlobal"));
+        console.log(temps);
+        bar.set(temps);
+    }
+
+}
+
+// Chrono Global
+let bar = new ldBar("#chrono");
+
+
+let tempsEcoule = setInterval(decrementation, 60000); // decrementation toutes les minutes
+let temps = 100; // on part de 100% de temps restant
+function decrementation(){
+    if (temps<1){ // si on est a 0 => on arrete le compteur: game over
+        clearInterval(tempsEcoule);
+        console.log("titre");
+        titrePopDiv.innerHTML = "Game Over !"; // TITRE DE LA POP UP
+        console.log("regles");
+        pPopDiv.innerHTML = "<p id='p-div'>On aurait pu croire en ton potentiel mais apparement non...</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
+        setTimeout (function () {
+            document.location.href = "../index.html"
+        }, 5000);
+    }
+    else{
+        let pourcentageTemps = 100/60; // sinon on decrementate de 1.66% <=> 1 min sur 60min (en %)
+        temps -= pourcentageTemps;
+        bar.set(temps)
+    }
+}
+
+
 // FONCTION VIE
 function togglevisi (item,State){
     item.style.display = State;
@@ -16,10 +60,22 @@ let vie = 3;
 function decrementation_vie() {
     if (vie == 2) {
         togglevisi(heart1, "none");
+        console.log("titre");
+        titrePopDiv.innerHTML = "Perdu ! "; // TITRE DE LA POP UP
+        console.log("regles");
+        pPopDiv.innerHTML = "<p id='p-div'>Le monde compte sur toi ! Reprends-toi !</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
     }
     if (vie == 1) {
         togglevisi(heart1, "none");
         togglevisi(heart2, "none");
+        console.log("titre");
+        titrePopDiv.innerHTML = "Perdu ! "; // TITRE DE LA POP UP
+        console.log("regles");
+        pPopDiv.innerHTML = "<p id='p-div'>C’est ta dernière chance, ne la rate pas !</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
     }
     if (vie == 0) {
         togglevisi(heart1, "none");
@@ -87,40 +143,40 @@ let blu = new colorButton(4, "blu");
 
 //Effects when clicking the start button
 $("#startButton").on("click", function () {
-        // on change le background qui passe de jaune à vert
-        $("#startButton").css("background", "green");
-        // la let variable running vaut true
-        running = true;
-        // on vide le tableau utilisateur
-        userArray = [];
-        // on vide le tableau mémoire de l'ordinateur
-        memoryArray = [];
-        // on remet les compteur des tableaux à 0
-        memoryArrayCounter = 0;
-        userArrayCounter = 0;
-        // on augmente l'opacité du texte (compteur)
-        $("#displayText").css("opacity", "1");
-        // on réinitialise le niveau à 1
-        levelCount = 1;
-        // on affiche "--" dans le compteur
-        $("#displayText").html("--");
-        // matchingArrays qui compare les tableau ordinateur/utilisateur vaut true
-        matchingArrays = true;
-        // on efface le timer runMemory qui lance la fonction playMemory
-        clearInterval(runMemory);
-        // on désactive la possibilté de cliquer sur les boutons
-        $(".fourButton").css("pointer-events", "none");
-        // on appelle newMemory pour ajouter une couleur au tableau de memoire de l'ordinateur
-        newMemory();
+    // on change le background qui passe de jaune à vert
+    $("#startButton").css("background", "green");
+    // la let variable running vaut true
+    running = true;
+    // on vide le tableau utilisateur
+    userArray = [];
+    // on vide le tableau mémoire de l'ordinateur
+    memoryArray = [];
+    // on remet les compteur des tableaux à 0
+    memoryArrayCounter = 0;
+    userArrayCounter = 0;
+    // on augmente l'opacité du texte (compteur)
+    $("#displayText").css("opacity", "1");
+    // on réinitialise le niveau à 1
+    levelCount = 1;
+    // on affiche "--" dans le compteur
+    $("#displayText").html("--");
+    // matchingArrays qui compare les tableau ordinateur/utilisateur vaut true
+    matchingArrays = true;
+    // on efface le timer runMemory qui lance la fonction playMemory
+    clearInterval(runMemory);
+    // on désactive la possibilté de cliquer sur les boutons
+    $(".fourButton").css("pointer-events", "none");
+    // on appelle newMemory pour ajouter une couleur au tableau de memoire de l'ordinateur
+    newMemory();
 
-        console.log(memoryArray);
+    console.log(memoryArray);
 
-        // setTimeOut appelle la fonction qui change la valeur de runMemory après 1 secondes (1000 sec)
-        // runMemory appelle la fonction playMemory toutes les secondes pour montrer les couleurs qui doivent etre cliquées
-        // runMemory est stoppé quand memoryArrayCounter == memoryArray.length pour éviter une boucle toutes les seconcdes
-        setTimeout(function () {
-            runMemory = setInterval(playMemory, 1000);
-        }, 1000);
+    // setTimeOut appelle la fonction qui change la valeur de runMemory après 1 secondes (1000 sec)
+    // runMemory appelle la fonction playMemory toutes les secondes pour montrer les couleurs qui doivent etre cliquées
+    // runMemory est stoppé quand memoryArrayCounter == memoryArray.length pour éviter une boucle toutes les seconcdes
+    setTimeout(function () {
+        runMemory = setInterval(playMemory, 1000);
+    }, 1000);
 
 });
 
@@ -188,8 +244,15 @@ $("div[id*='button']").on("click", function () {
                 decrementation_vie();
                 // retour salle 1 si vie=0
                 if (vie==0) {
-                    setTimeout (function () {document.location.href = "http://localhost:63342/BehindClosedDoors-celinehubertcoutant-patch-1/01_ChildrensMemories/01_Index.html?_ijt=b3mpmg87e33011009urs6s9g97"
-                    }, 3000);
+                    console.log("titre");
+                    titrePopDiv.innerHTML = "Game Over !"; // TITRE DE LA POP UP
+                    console.log("regles");
+                    pPopDiv.innerHTML = "<p id='p-div'>On aurait pu croire en ton potentiel mais apparement non...</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+                    togglevisi(popDiv, "");
+                    fadeIn(popDiv,5);
+                    setTimeout (function () {
+                        document.location.href = "../index.html"
+                    }, 5000);
                 }
             }
 
@@ -352,9 +415,23 @@ function win() {
     // on affiche WIN dans le compteur
     $("#displayText").html("WIN");
     light();
+    // POP UP Victoire
+    console.log("titre");
+    titrePopDiv.innerHTML = "Bravo !"; // TITRE DE LA POP UP
+    console.log("regles");
+    pPopDiv.innerHTML = "<p id='p-div'>Tu peux maintenant passer à la salle suivante.</p>" +
+        "<p id='p-div'>Un détail important! La salle suivante comporte un compte à rebours. Prépare toi !</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+    togglevisi(popDiv, "");
+    fadeIn(popDiv,5);
     // apparition de la fleche salle suivante
     togglevisi(fleche, "");
 }
+
+// a ajouter au template
+fleche.addEventListener("click", function () {
+    sauvegarder();
+    document.location.href = "../06_TheLastOfComputers/06_Index.html";
+});
 
 function lightLoose () {
     $("#displayText").html("--");
@@ -441,3 +518,50 @@ function light(){
     }, 2000);
 }
 
+// DIV POP // DIV POP UP
+let popDiv = document.querySelector("#pop-div");
+let titrePopDiv = document.querySelector(".titre-pop-div");
+let pPopDiv = document.querySelector("#paragraph-pop-div");
+let closeDiv = document.querySelector(".fermer-div");
+
+// Opacité initiale de la pop
+popDiv.style.opacity = "0";
+
+// Pop Div caché au départ
+togglevisi(popDiv, 'none');
+
+// Fonction d'apparition graduelle -> show()
+function fadeIn(item,dureeApparition) { // dureeApparition est en ms soit 1000 ms = 1 seconde
+    let i = 0;
+    let k = window.setInterval(function() {
+        if (i >= 100) {
+            clearInterval(k);
+        } else {
+            item.style.opacity = i/100;
+            i++;
+        }
+    }, dureeApparition);
+}
+
+// Fonction de disparition graduelle -> hide()
+function fadeOut(item,dureeDisparition) { // dureeDisparition est en ms soit 1000 ms = 1 seconde
+    let i = 100;
+    let k = window.setInterval(function() {
+        if (i <= 0) {
+            clearInterval(k);
+        } else {
+            item.style.opacity = i/100;
+            i--;
+        }
+    }, dureeDisparition);
+}
+
+// Bouton [X] de fermeture de la pop - A copier tel quel
+closeDiv.addEventListener("click", function (){
+    fadeOut(popDiv, 10);
+    console.log("pop out");
+    setTimeout(function (){
+        togglevisi(popDiv, "none");
+        console.log("pop out 2")
+    }, 1000)
+});
