@@ -135,10 +135,58 @@ p{
     float: right;
 }
 
-/* Fin css chrono global */
+/* Nom de la Salle */
 
 #nom-salle{
     color: #FFFFFF;
     position: fixed;
     bottom: 0;
+}
+
+/* Div Pop */
+#flex-pop-div{
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14%;
+}
+
+#pop-div{
+    background-image: url("../img/BackgroungDivPop.png");
+    width: 760px;
+    height: 432px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#titre-div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20px 20px 0 20px;
+}
+
+#h2-pop-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.titre-pop-div{
+    font-size: 36px;
+}
+
+#paragraph-pop-div{
+    padding: 20px;
+}
+
+#p-div{
+    text-align: center;
+    font-size: 24px;
+    color: #000;
 }

@@ -29,10 +29,22 @@ let vie = 3;
 function decrementation_vie() {
     if (vie == 2) {
         togglevisi(heart1, "none");
+        console.log("titre");
+        titrePopDiv.innerHTML = "Voici le titre des règles du jeu !"; // TITRE DE LA POP UP
+        console.log("regles");
+        pPopDiv.innerHTML = "<p id='p-div'>Ici nous mettons les règles du jeu quand elles seront écrites !</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
     }
     if (vie == 1) {
         togglevisi(heart1, "none");
         togglevisi(heart2, "none");
+        console.log("titre");
+        titrePopDiv.innerHTML = "Voici le titre des règles du jeu !"; // TITRE DE LA POP UP
+        console.log("regles");
+        pPopDiv.innerHTML = "<p id='p-div'>Ici nous mettons les règles du jeu quand elles seront écrites !</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
     }
     if (vie == 0) {
         togglevisi(heart1, "none");
@@ -52,13 +64,25 @@ vie--;
 // decrementation_vie();
 // retour salle 1 si vie=0
 if (vie==0) {
-    setTimeout (function () {document.location.href = "http://localhost:63342/BehindClosedDoors-celinehubertcoutant-patch-1/01_ChildrensMemories/01_Index.html?_ijt=b3mpmg87e33011009urs6s9g97"
-    }, 3000);
+    console.log("titre");
+    titrePopDiv.innerHTML = "Game Over !"; // TITRE DE LA POP UP
+    console.log("regles");
+    pPopDiv.innerHTML = "<p id='p-div'>On aurait pu croire en ton potentiel mais apparement non...</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+    togglevisi(popDiv, "");
+    fadeIn(popDiv,5);
+    setTimeout (function () {document.location.href = "../index.html" // Retour page accueil
+    }, 5000);
 }
 // !!!!! A INSERER LORS DE LA GAGNE
 
-// apparition de la fleche salle suivante
+// apparition de la fleche salle suivante et pop up victoire
 togglevisi(fleche, "");
+console.log("titre");
+titrePopDiv.innerHTML = "Titre de victoire de la salle"; // TITRE DE LA POP UP
+console.log("regles");
+pPopDiv.innerHTML = "<p id='p-div'>texte de victoire de la salle</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+togglevisi(popDiv, "");
+fadeIn(popDiv,5);
 
 // Event lors de la victoire sur chaque page
 fleche.addEventListener("click", function () {
@@ -91,9 +115,14 @@ let temps = 100; // on part de 100% de temps restant
 function decrementation(){
     if (temps<1){ // si on est a 0 => on arrete le compteur: game over
         clearInterval(tempsEcoule);
-        setTimeout (function () {
-            document.location.href = "../../index.html"
-        }, 500);
+        console.log("titre");
+        titrePopDiv.innerHTML = "Game Over !"; // TITRE DE LA POP UP
+        console.log("regles");
+        pPopDiv.innerHTML = "<p id='p-div'>On aurait pu croire en ton potentiel mais apparement non...</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
+        setTimeout (function () {document.location.href = "../index.html" // Retour page accueil
+        }, 5000);
     }
     else{
         let pourcentageTemps = 100/60; // sinon on decrementate de 1.66% <=> 1 min sur 60min (en %)
@@ -102,4 +131,59 @@ function decrementation(){
     }
 }
 
-document.onload = setInterval(decrementation, 60000);
+// DIV POP UP
+let popDiv = document.querySelector("#pop-div");
+let titrePopDiv = document.querySelector(".titre-pop-div");
+let pPopDiv = document.querySelector("#paragraph-pop-div");
+let closeDiv = document.querySelector(".fermer-div");
+
+// Opacité initiale de la pop
+popDiv.style.opacity = "0";
+
+// Pop Div caché au départ
+togglevisi(popDiv, 'none');
+
+// Fonction d'apparition graduelle -> show()
+function fadeIn(item,dureeApparition) { // dureeApparition est en ms soit 1000 ms = 1 seconde
+    let i = 0;
+    let k = window.setInterval(function() {
+        if (i >= 100) {
+            clearInterval(k);
+        } else {
+            item.style.opacity = i/100;
+            i++;
+        }
+    }, dureeApparition);
+}
+
+// Fonction de disparition graduelle -> hide()
+function fadeOut(item,dureeDisparition) { // dureeDisparition est en ms soit 1000 ms = 1 seconde
+    let i = 100;
+    let k = window.setInterval(function() {
+        if (i <= 0) {
+            clearInterval(k);
+        } else {
+            item.style.opacity = i/100;
+            i--;
+        }
+    }, dureeDisparition);
+}
+
+// A inserer dans pop up
+    console.log("titre");
+    titrePopDiv.innerHTML = "Voici le titre des règles du jeu !"; // TITRE DE LA POP UP
+    console.log("regles");
+    pPopDiv.innerHTML = "<p id='p-div'>Ici nous mettons les règles du jeu quand elles seront écrites !</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+    togglevisi(popDiv, "");
+    fadeIn(popDiv,5);
+
+
+// Bouton [X] de fermeture de la pop - A copier tel quel
+closeDiv.addEventListener("click", function (){
+    fadeOut(popDiv, 10);
+    console.log("pop out");
+    setTimeout(function (){
+        togglevisi(popDiv, "none");
+        console.log("pop out 2")
+    }, 1000)
+});
