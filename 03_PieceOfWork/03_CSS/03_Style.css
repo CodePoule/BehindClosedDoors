@@ -7,13 +7,10 @@ body{
 }
 
 #flex-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
 }
 
 #puzzle{
-    width: 1024px;
-    height: 720px;
-    margin: 140px auto;
+    width: 1920px;
+    height: 100%;
 }
