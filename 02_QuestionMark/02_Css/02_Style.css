@@ -1,1 +1,10 @@
-/*Ce style n'est pas vide*/
+body{
+    width: 100%;
+
+}
+
+#question_suivante {
+    background-color: aquamarine;
+    height: 100px;
+    border-radius: 5px;
+}
