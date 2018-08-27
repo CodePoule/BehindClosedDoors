@@ -13,18 +13,6 @@
 <body>
 <div id="template">
 
-    <!--vie-->
-    <div class="vie">
-        <img id= "heart1" src="Img/Heart.png" height="76" width="76"/>
-        <img id= "heart2" src="Img/Heart.png" height="76" width="76"/>
-        <img id= "heart3" src="Img/Heart.png" height="76" width="76"/>
-    </div>
-
-    <!--fleche salle suivante-->
-    <div class="fleche">
-        <img src="Img/Fleche.png" height="76" width="76"/>
-    </div>
-
     <!--Règles des salles-->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -36,18 +24,32 @@
         <span onclick="openNav()"><i id="iconRules" class="far fa-question-circle"></i></span>
     </div>
 
-    <!--Chrono Global-->
-    <div id="chrono"
-         data-preset="bubble"
-         class="ldBar label-center"
-         data-value="100"
-         data-pattern-size="100">
+    <div id="temp-right">
+        <!--Chrono Global-->
+        <div id="chrono"
+             data-preset="bubble"
+             class="ldBar label-center"
+             data-value="100"
+             data-pattern-size="100">
+        </div>
+        <!--vie-->
+        <div class="vie">
+            <img src="Img/Heart.png" height="76" width="76" id="heart1"/>
+            <img src="Img/Heart.png" height="76" width="76" id="heart2"/>
+            <img src="Img/Heart.png" height="76" width="76" id="heart3"/>
+        </div>
+    </div>
+
+    <!--fleche salle suivante-->
+    <div class="fleche">
+        <i class="far fa-arrow-alt-circle-right"></i>
     </div>
 
     <!--<div class="testbox">
         <h1>this is a title test</h1>
         <p>another lorem ipsum test blablabla</p>
     </div>-->
+    <h1 id="nom-salle">Mettre le titre de chaque salle en js</h1>
 
 </div>
 

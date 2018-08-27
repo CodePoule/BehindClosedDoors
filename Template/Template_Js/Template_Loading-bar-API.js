@@ -800,7 +800,7 @@
                 "type": 'fill',
                 "path": 'M50 10A40 40 0 0 1 50 90A40 40 0 0 1 50 10',
                 "fill-dir": 'btt',
-                "fill": 'data:ldbar/res,bubble(#39d,#cef)',
+                "fill": 'data:ldbar/res,bubble(#D32F0C,#cef)', // Couleurs liquide/bubbles
                 "pattern-size": "150",
                 "fill-background": '#ddd',
                 "fill-background-extrude": 2,
