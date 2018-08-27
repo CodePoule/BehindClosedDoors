@@ -3,38 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Template</title>
-    <script src="Template_Js/Template_Main.js"></script>
+    <!--toujours intéger en head v-->
+        <script src="Template_Js/Template_Loading-bar-API.js"></script>
+    <!--toujours intéger en head ^-->
     <link rel="stylesheet" href="Template_Css/Template_Style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 <body>
+<div id="template">
 
-<!--vie-->
-<div class="vie">
-    <img id= "heart1" src="Img/Heart.png" height="76" width="76"/>
-    <img id= "heart2" src="Img/Heart.png" height="76" width="76"/>
-    <img id= "heart3" src="Img/Heart.png" height="76" width="76"/>
+    <!--vie-->
+    <div class="vie">
+        <img id= "heart1" src="Img/Heart.png" height="76" width="76"/>
+        <img id= "heart2" src="Img/Heart.png" height="76" width="76"/>
+        <img id= "heart3" src="Img/Heart.png" height="76" width="76"/>
+    </div>
+
+    <!--fleche salle suivante-->
+    <div class="fleche">
+        <img src="Img/Fleche.png" height="76" width="76"/>
+    </div>
+
+    <!--Règles des salles-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <p> insert mega important rules to follow at all cost here </p>
+    </div>
+
+    <!--Bouton ?-->
+    <div id="main">
+        <span onclick="openNav()"><i id="iconRules" class="far fa-question-circle"></i></span>
+    </div>
+
+    <!--Chrono Global-->
+    <div id="chrono"
+         data-preset="bubble"
+         class="ldBar label-center"
+         data-value="100"
+         data-pattern-size="100">
+    </div>
+
+    <!--<div class="testbox">
+        <h1>this is a title test</h1>
+        <p>another lorem ipsum test blablabla</p>
+    </div>-->
+
 </div>
 
-<!--fleche salle suivante-->
-<div class="fleche">
-    <a href="../01_ChildrensMemories/01_Index.html"><img src="Img/Fleche.png" height="76" width="76"/></a>
-</div>
+<!-- Scripts js -->
+    <script src="Template_Js/jquery-3.3.1.min.js"></script>
+    <script src="Template_Js/Template_Main.js"></script>
 
-
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <p> insert mega important rules to follow at all cost here </p>
-</div>
-
-<div id="main">
-    <span onclick="openNav()"><i id="iconRules" class="far fa-question-circle"></i></span>
-</div>
-
-<div class="testbox">
-    <h1>this is a title test</h1>
-    <p>another lorem ipsum test blablabla</p>
-</div>
 </body>
 </html>
