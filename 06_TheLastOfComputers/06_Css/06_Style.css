@@ -1,10 +1,99 @@
-html {
-    background: url("../06_Img/06_Bg.png") no-repeat center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    /*background-size: cover;*/
+body {
+    display: flex;
+    background: url("../06_Img/06_bg.png") no-repeat center fixed;
+    background-size: cover;
 }
 
+#wrapper{
+    z-index: 2;
+}
 
+#clockdiv{
+;
+    width: 350px;
+    margin: auto;
+    color: red;
+    background-color: white;
+    font-weight: 100;
+    font-size: 100px;
+    text-align: center;
+}
 
+.clockWrap{
+    margin: auto;
+    padding: 30px 10px 0 10px;
+}
 
+.minutes, .smalldots, .seconds{
+    text-align: center;
+}
+
+.inputFib{
+    border: 4px pink double;
+    padding: 10px;
+    margin: auto;
+    width: 200px;
+
+}
+
+.vie{
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/*icon [?]*/
+#iconRules{
+    margin: 10px auto 0 auto;
+    animation: beat 1.6s infinite linear;
+}
+/*animation sur l icon */
+@keyframes beat {
+    from{
+        transform: scale(1.0);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
