@@ -3,6 +3,7 @@
 body {
     transition: background-color .5s;
     display: inline;
+    background-image: url("/01_Img/01_ChildrenBedroom.jpg");
 
 }
 
