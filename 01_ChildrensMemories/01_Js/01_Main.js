@@ -26,7 +26,6 @@ togglevisi(heart1, "");
 togglevisi(heart2, "");
 togglevisi(heart3, "");
 
-let vie = 3;
 
 function decrementation_vie() {
     if (vie == 2) {
@@ -50,6 +49,11 @@ togglevisi(fleche, "none");
 
 
 let compteurNiveau = 1;
+let vie=3;
+localStorage.setItem("VieEnregistree", 3);
+
+
+
 let boutonValider = document.querySelector(".valider");//valider
 let childrensplay = document.querySelector(".childrensplay");
 
@@ -73,12 +77,15 @@ function getRandomInt(min,max) {
 
 //Fonction du jeu niveau 1
 function lvl1() {
+    vie=localStorage.getItem("VieEnregistree");
+    decrementation_vie();
+
 
     //variables de calcul
         let calc1 = yoda.valeur * 3;
         let calc2 = yoda.valeur * 2 + sonic.valeur;
         let calc3 = yoda.valeur + sonic.valeur + wallE.valeur;
-        //console.log("niveau 1 : " + wallE.valeur);
+        console.log("niveau 1 : " + wallE.valeur);
 
     //affichage des éléments dans la page html
         childrensplay.innerHTML = "<img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '> = " + calc1 + "</br>" +
@@ -101,15 +108,19 @@ function lvl1() {
                 console.log("verif niveau 1");
                 alert("1 Bien joué tu passes au niveau suivant!");
                 document.onload = lvl2();
-                //
+
             }
             else if (saisie1Utilisateur.value !== resultatlv1 && compteurNiveau == 1) {
                 // decrementation de la vie
                 vie--;
                 console.log(vie);
-                decrementation_vie();
+
                 alert("1 Tu perds une vie et tu recommences!");
+                localStorage.setItem("VieEnregistree", vie);
                 window.location.reload();
+                console.log("vie: "+vie);
+                vie=localStorage.getItem("VieEnregistree");
+                decrementation_vie();
 
             }
 
@@ -119,9 +130,12 @@ function lvl1() {
 
 //Fonction du jeu niveau 2
 function lvl2() {
+    vie=localStorage.getItem("VieEnregistree");
+    decrementation_vie();
 
 
-        yoda.valeur = getRandomInt(0, 10);
+
+    yoda.valeur = getRandomInt(0, 10);
         sonic.valeur = getRandomInt(5, 15);
         wallE.valeur = getRandomInt(10, 20);
 
@@ -130,7 +144,7 @@ function lvl2() {
         let calc5 = yoda.valeur * 2 + sonic.valeur;
         let calc6 = yoda.valeur + sonic.valeur - wallE.valeur;
         let calc7 = sonic.valeur + (yoda.valeur * wallE.valeur);
-        //console.log("niveau 2 : " + calc7);
+        console.log("niveau 2 : " + calc7);
 
         //affichage des éléments dans la page html
         childrensplay.innerHTML = "<img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '> = " + calc4 + "</br>" +
@@ -157,9 +171,12 @@ function lvl2() {
                 // decrementation de la vie
                 vie--;
                 console.log(vie);
-                decrementation_vie();
                 alert("2 Tu perds une vie et tu recommences!");
+                localStorage.setItem("VieEnregistree", vie);
                 window.location.reload();
+                console.log("vie: "+vie);
+                vie=localStorage.getItem("VieEnregistree");
+                decrementation_vie();
 
             }
 
@@ -177,7 +194,7 @@ function lvl3() {
         let calc9 = yoda.valeur * 2 + sonicbis.valeur;
         let calc10 = yoda.valeur + sonicbis.valeur - wallE.valeur;
         let calc11 = sonic.valeur + (yoda.valeur * wallE.valeur);
-        //console.log(calc11);
+        console.log(calc11);
 
         //affichage des éléments dans la page html
         childrensplay.innerHTML = "<img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '> = " + calc8 + "</br>" +
@@ -203,10 +220,12 @@ function lvl3() {
                 // decrementation de la vie
                 vie--;
                 console.log(vie);
-                decrementation_vie();
                 alert("3 Tu perds une vie et tu recommences!");
+                localStorage.setItem("VieEnregistree", vie);
                 window.location.reload();
-
+                console.log("vie: "+vie);
+                vie=localStorage.getItem("VieEnregistree");
+                decrementation_vie();
             }
         })
 }
