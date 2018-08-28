@@ -7,6 +7,25 @@ body {
 
 }
 
+.fiboNumbers{
+    width:80px;
+
+}
+
+.fibonacci{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height:100px;
+    width: 800px;
+    font-size: 15px;
+    background: #E2C173 ;
+    text-shadow:2px 2px 4px darkgoldenrod;
+    border: white 1px solid;
+    border-radius: 10px 10px;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
 #flex-container {
 
     z-index: 1;
