@@ -6,26 +6,66 @@
     <link rel="stylesheet" href="06_Css/06_Style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="06_Css/06_templateCss.css">
+    <script src="06_Js/06_api.js"></script>
 </head>
 <body>
+<div id="template">
 
-
-
-    <!--sidenav des regles-->
+    <!--Règles des salles-->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <p> insert mega important rules to follow at all cost here </p>
+        <p> De retour sur la Terre ! </p>
+            <p>mais il semblerait que tu as voyagé dans le temps à un siècle inquiétant.
+            Pour t'échapper de là tu dois retrouver la bonne combinaison et la rentrer
+                dans le dernier ordinateur ayant survecu à l'apocalypse.</p>
+            <p>Sois rapide ! car le compte à rebours à commencé.</p>
     </div>
 
+    <!--Bouton ?-->
     <div id="main">
         <span onclick="openNav()"><i id="iconRules" class="far fa-question-circle"></i></span>
     </div>
 
-    <!--vie-->
-    <div class="vie">
-        <img id= "heart1" src="06_Img/Heart.png" height="76" width="76"/>
-        <img id= "heart2" src="06_Img/Heart.png" height="76" width="76"/>
-        <img id= "heart3" src="06_Img/Heart.png" height="76" width="76"/>
+    <div id="temp-right">
+        <!--Chrono Global-->
+        <div id="chrono"
+             data-preset="bubble"
+             class="ldBar label-center"
+             data-value="100"
+             data-pattern-size="100">
+        </div>
+        <!--vie-->
+        <div class="vie">
+            <img src="06_Img/Heart.png" height="76" width="76" id="heart1"/>
+            <img src="06_Img/Heart.png" height="76" width="76" id="heart2"/>
+            <img src="06_Img/Heart.png" height="76" width="76" id="heart3"/>
+        </div>
+    </div>
+
+    <h1 id="nom-salle">Mettre le titre de chaque salle en js</h1>
+
+    <div id="flex-pop-div">
+        <div id="pop-div-blueImg"></div>
+        <div id="pop-div">
+            <div id="titre-div">
+                <div id="h2-pop-div"><h2 class="titre-pop-div"><!-- Titre div pop --></h2></div>
+                <i class="fas fa-times fermer-div"></i>
+            </div>
+            <div id="paragraph-pop-div"><!-- Contenu de la div Pop --></div>
+        </div>
+    </div>
+
+</div>
+
+    <div class = "fibonacci">
+        <div class = "chiffre1"><img src="06_Img/chiffre_1.png" class="fiboNumbers"></div>
+        <div class = "chiffre2"><img src="06_Img/chiffre_2.png" class="fiboNumbers"></div>
+        <div class = "chiffre3"><img src="06_Img/chiffre_3.png" class="fiboNumbers"></div>
+        <div class = "chiffre5"><img src="06_Img/chiffre_5.png" class="fiboNumbers"></div>
+        <div class = "chiffre8"><img src="06_Img/chiffre_8.png" class="fiboNumbers"></div>
+        <div class = "lastnumber"><img src="" class="fiboNumbers"></div>
+
     </div>
 
     <div id="wrapper">
@@ -43,15 +83,16 @@
             <!--fin du countdown-->
             <!--input pour suite Fibo-->
             <div class="inputFib">
-                <input type="number" placeholder="Enter the number">
-                <button class="fibBtn">Valider</button>
+                <input id="inputFibOk" type="number" placeholder="Enter the number">
+
             </div>
 
-
+        <button class="fibBtn">Valider</button>
     </div>
 </div>
 
 
 <script src="06_Js/06_Main.js"></script>
+<script src="06_Js/jquery.js"></script>
 </body>
 </html>
