@@ -1,26 +1,27 @@
 body {
-    display: flex;
+
     background: url("../06_Img/06_bg.png") no-repeat center fixed;
     background-size: cover;
+
 }
 
 #wrapper{
-    z-index: 2;
+    display: flex;
 }
 
+.bgContainer{
+    flex-direction: row;
+}
+
+/*countdown*/
 #clockdiv{
-;
-    width: 350px;
-    margin: auto;
-    color: red;
-    background-color: white;
+    color:red;
     font-weight: 100;
     font-size: 100px;
     text-align: center;
 }
 
 .clockWrap{
-    margin: auto;
     padding: 30px 10px 0 10px;
 }
 
@@ -29,19 +30,27 @@ body {
 }
 
 .inputFib{
-    border: 4px pink double;
     padding: 10px;
+    width: 350px;
     margin: auto;
-    width: 200px;
-
 }
 
+.fibBtn{
+    padding:10px;
+    width:250px;
+    margin:auto;
+}
+
+
+
+/*css de la vie*/
 .vie{
     float: right;
     margin-top: 10px;
     margin-right: 10px;
 }
 
+/*barre de nav des regles*/
 .sidenav {
     height: 100%;
     width: 0;
@@ -81,6 +90,7 @@ body {
     padding: 16px;
     font-size:30px;
     cursor:pointer;
+    width: 76px;
 }
 
 /*icon [?]*/
@@ -96,4 +106,43 @@ body {
     to {
         transform: scale(1.2);
     }
+}
+
+/*SUITE FIBONACCI */
+@keyframes stretch {
+    0% {
+        transform: scale(.3);
+        border-radius: 100%;
+    }
+
+    100% {
+        transform: scale(1.5);
+
+    }
+}
+
+.fiboNumbers{
+    width:80px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    justify-content: center;
+    animation: stretch 1.8s ease-out 0s alternate infinite none running;
+}
+
+.fibonacci{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height:100px;
+    width: 800px;
+    font-size: 15px;
+    background: #E2C173 ;
+    text-shadow:2px 2px 4px darkgoldenrod;
+    border: white 1px solid;
+    border-radius: 10px 10px;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    margin-left: auto;
+    margin-right: auto;
 }
