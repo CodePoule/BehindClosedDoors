@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Children's Memories</title>
+    <script src="01_Js/Template_Loading-bar-API.js"></script>
+
+    <!--toujours intéger en head -->
+    <link rel="stylesheet" href="01_Css/Template_Style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="01_Css/01_Style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -10,57 +17,69 @@
 </head>
 <body>
 
-    <div class = "fibonacci">
-        <div class = "chiffre1"><img src="01_Img/chiffre_1.png" class="fiboNumbers"></div>
-        <div class = "chiffre2"><img src="01_Img/chiffre_2.png" class="fiboNumbers"></div>
-        <div class = "chiffre3"><img src="01_Img/chiffre_3.png" class="fiboNumbers"></div>
-        <div class = "chiffre5"><img src="01_Img/chiffre_5.png" class="fiboNumbers"></div>
-        <div class = "chiffre8"><img src="01_Img/chiffre_8.png" class="fiboNumbers"></div>
+<div id="template">
 
+    <!--Règles des salles-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <p> Pour finir cette salle, tu as besoin de résoudre ces calculs sur trois niveaux de difficulté. </p>
     </div>
 
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <p> insert mega important rules to follow at all cost here </p>
+    <!--Bouton ?-->
+    <div id="main">
+        <span onclick="openNav()"><i id="iconRules" class="far fa-question-circle"></i></span>
+    </div>
+
+    <div id="temp-right">
+        <!--Chrono Global-->
+        <div id="chrono"
+             data-preset="bubble"
+             class="ldBar label-center"
+             data-value="100"
+             data-pattern-size="100">
+        </div>
+        <!--vie-->
+        <div class="vie">
+            <img src="01_Img/Heart.png" height="76" width="76" id="heart1"/>
+            <img src="01_Img/Heart.png" height="76" width="76" id="heart2"/>
+            <img src="01_Img/Heart.png" height="76" width="76" id="heart3"/>
+        </div>
+    </div>
+
+    <!--fleche salle suivante-->
+    <div class="fleche">
+        <i class="far fa-arrow-alt-circle-right"></i>
+    </div>
+
+    <!--<div class="testbox">
+        <h1>this is a title test</h1>
+        <p>another lorem ipsum test blablabla</p>
+    </div>-->
+    <h1 id="nom-salle">Mettre le titre de chaque salle en js</h1>
+
+    <div id="flex-pop-div">
+        <div id="pop-div">
+            <div id="titre-div">
+                <div id="h2-pop-div"><h2 class="titre-pop-div"><!-- Titre div pop --></h2></div>
+                <i class="fas fa-times fermer-div"></i>
+            </div>
+            <div id="paragraph-pop-div"><!-- Contenu de la div Pop --></div>
+        </div>
+    </div>
 
 </div>
 
     <div id = flex-container>
 
-<div>
 
-
-    <h1>Children's play</h1>
-
-
-    <div id="main">
-        <span onclick="openNav()"><i id="iconRules" class="far fa-question-circle"></i></span>
-    </div>
-
-    <!--vie-->
-    <div class="vie">
-        <img id= "heart1" src="01_Img/Heart.png" height="76" width="76"/>
-        <img id= "heart2" src="01_Img/Heart.png" height="76" width="76"/>
-        <img id= "heart3" src="01_Img/Heart.png" height="76" width="76"/>
-    </div>
-
-
-    <div class="childrensplay">
+        <div class="childrensplay"></div>
 
     </div>
-    <button type="button" class="valider">Valider</button>
-
-</div>
-    <!--fleche salle suivante-->
-    <div class="fleche">
-        <a href="../01_ChildrensMemories/01_Index.html"><img src="01_Img/Fleche.png" height="76" width="76"/></a>
-    </div>
-</div>
-
-  <div>
 
 
-<script src="01_Js/01_Main.js"></script>
+      <!-- Scripts js -->
+      <script src="01_Js/jquery-3.3.1.min.js"></script>
+      <script src="01_Js/01_Main.js"></script>
 
 </body>
 </html>

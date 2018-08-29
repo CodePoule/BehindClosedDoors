@@ -1,5 +1,10 @@
 //JS CHILDREN MEMORIES
 
+
+// Nom de la salle
+let nomSalle = document.querySelector("#nom-salle");
+nomSalle.innerHTML = "Childrens Memories";
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
@@ -30,17 +35,40 @@ togglevisi(heart3, "");
 function decrementation_vie() {
     if (vie == 2) {
         togglevisi(heart1, "none");
+        console.log("titre");
+        titrePopDiv.innerHTML = "PERDU!"; // TITRE DE LA POP UP
+        console.log("regles");
+        pPopDiv.innerHTML = "<p id='p-div'>Tu perds une vie et tu recommences!</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
     }
     if (vie == 1) {
         togglevisi(heart1, "none");
         togglevisi(heart2, "none");
+        console.log("titre");
+        titrePopDiv.innerHTML = "PERDU"; // TITRE DE LA POP UP
+        console.log("regles");
+        pPopDiv.innerHTML = "<p id='p-div'>Tu perds une vie et tu recommences!</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
     }
     if (vie == 0) {
         togglevisi(heart1, "none");
         togglevisi(heart2, "none");
         togglevisi(heart3, "none");
+        console.log("titre");
+        titrePopDiv.innerHTML = "Game Over !"; // TITRE DE LA POP UP
+        console.log("regles");
+        pPopDiv.innerHTML = "<p id='p-div'>On aurait pu croire en ton potentiel mais apparement non...</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
+        setTimeout (function () {document.location.href = "../index.html" // Retour page accueil
+        }, 5000);
     }
+
+
 }
+
 
 
 // FONCTION FLECHE
@@ -49,12 +77,11 @@ togglevisi(fleche, "none");
 
 
 let compteurNiveau = 1;
-let vie=3;
-localStorage.setItem("VieEnregistree", 3);
+//localStorage.setItem("VieEnregistree", 3);
 
 
 
-let boutonValider = document.querySelector(".valider");//valider
+
 let childrensplay = document.querySelector(".childrensplay");
 
 //fonction relative aux images qui s'affichent avec leurs valeurs correspondantes
@@ -88,13 +115,16 @@ function lvl1() {
         console.log("niveau 1 : " + wallE.valeur);
 
     //affichage des éléments dans la page html
-        childrensplay.innerHTML = "<img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '> = " + calc1 + "</br>" +
-            "<img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '>" + " + <img src=' " + sonic.urlImg + " '> = " + calc2 + "</br>" +
-            "<img src=' " + yoda.urlImg + " '>" + " + <img src=' " + sonic.urlImg + " '>" + " + <img src=' " + wallE.urlImg + " '> = " + calc3 + "<br>" +
-            "<img src=' " + wallE.urlImg + " '> = <input type='text' id='res1'> ?";
+        childrensplay.innerHTML = "<Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + yoda.urlImg + " '> = " + calc1 + "</br>" +
+            "<Img id='redim' src=' " + yoda.urlImg + " '>" + " + <Img id='redim' src=' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + sonic.urlImg + " '> = " + calc2 + "</br>" +
+            "<Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + sonic.urlImg + " '>" + " + <Img id ='redim' src =' " + wallE.urlImg + " '> = " + calc3 + "<br>" +
+            "<Img id ='redim' src =' " + wallE.urlImg + " '> = <input type='number' id='res1'> ? <button type='button' class='valider'>Valider</button>";
 
+        let boutonValider = document.querySelector(".valider");//valider
 
+3
         resultatlv1 = calc3 - yoda.valeur - sonic.valeur;
+
 
         //variable permettant de récupérer la réponse saisie par l'utilisateur
         let saisie1Utilisateur = document.querySelector("#res1");
@@ -106,7 +136,12 @@ function lvl1() {
                 compteurNiveau ++;
                 console.log(compteurNiveau);
                 console.log("verif niveau 1");
-                alert("1 Bien joué tu passes au niveau suivant!");
+                console.log("titre");
+                titrePopDiv.innerHTML = "Bravo!"; // TITRE DE LA POP UP
+                console.log("regles");
+                pPopDiv.innerHTML = "<p id='p-div'>Tu passes au niveau suivant!!</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+                togglevisi(popDiv, "");
+                fadeIn(popDiv,5);
                 document.onload = lvl2();
 
             }
@@ -114,8 +149,6 @@ function lvl1() {
                 // decrementation de la vie
                 vie--;
                 console.log(vie);
-
-                alert("1 Tu perds une vie et tu recommences!");
                 localStorage.setItem("VieEnregistree", vie);
                 window.location.reload();
                 console.log("vie: "+vie);
@@ -147,10 +180,13 @@ function lvl2() {
         console.log("niveau 2 : " + calc7);
 
         //affichage des éléments dans la page html
-        childrensplay.innerHTML = "<img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '> = " + calc4 + "</br>" +
-            "<img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '>" + " + <img src=' " + sonic.urlImg + " '> = " + calc5 + "</br>" +
-            "<img src=' " + yoda.urlImg + " '>" + " + <img src=' " + sonic.urlImg + " '> " + " - <img src=' " + wallE.urlImg + " '> = " + calc6 + "</br>" +
-            "<img src=' " + yoda.urlImg + " '>" + " + <img src=' " + sonic.urlImg + " '>" + " x <img src='" + wallE.urlImg + " '> = " + " <input type='text' id='res2'>";
+        childrensplay.innerHTML = "<Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + yoda.urlImg + " '> = " + calc4 + "</br>" +
+            "<Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + sonic.urlImg + " '> = " + calc5 + "</br>" +
+            "<Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + sonic.urlImg + " '> " + " - <Img id ='redim' src =' " + wallE.urlImg + " '> = " + calc6 + "</br>" +
+            "<Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + sonic.urlImg + " '>" + " x <Img id ='redim' src ='" + wallE.urlImg + " '> = " + " <input type='number' id='res2'>" +
+            "<button type='button' class='valider'>Valider</button>";
+
+        let boutonValider = document.querySelector(".valider");//valider
 
 
         //variable permettant de récupérer la réponse saisie par l'utilisateur
@@ -164,14 +200,18 @@ function lvl2() {
                 compteurNiveau ++;
                 console.log(compteurNiveau);
                 console.log("verif niveau 2");
-                alert("2 Bien joué tu passes au niveau suivant!");
+                console.log("titre");
+                titrePopDiv.innerHTML = "Bravo!"; // TITRE DE LA POP UP
+                console.log("regles");
+                pPopDiv.innerHTML = "<p id='p-div'>Tu passes au niveau suivant!!</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+                togglevisi(popDiv, "");
+                fadeIn(popDiv,5);
                 document.onload = lvl3();
             }
             else if (saisie2Utilisateur.value !== resultatlv2 && compteurNiveau == 2) {
                 // decrementation de la vie
                 vie--;
                 console.log(vie);
-                alert("2 Tu perds une vie et tu recommences!");
                 localStorage.setItem("VieEnregistree", vie);
                 window.location.reload();
                 console.log("vie: "+vie);
@@ -185,7 +225,6 @@ function lvl2() {
 
 function lvl3() {
 
-
         yoda.valeur = getRandomInt(0, 10);
         sonic.valeur = getRandomInt(5, 15);
         wallE.valeur = getRandomInt(10, 20);
@@ -197,10 +236,13 @@ function lvl3() {
         console.log(calc11);
 
         //affichage des éléments dans la page html
-        childrensplay.innerHTML = "<img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '> = " + calc8 + "</br>" +
-            "<img src=' " + yoda.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '>" + " + <img src=' " + sonicbis.urlImg + " '> = " + calc9 + "</br>" +
-            "<img src=' " + yoda.urlImg + " '>" + " + <img src=' " + sonicbis.urlImg + " '> " + " - <img src=' " + wallE.urlImg + " '> = " + calc10 + "</br>" +
-            "<img src=' " + sonic.urlImg + " '>" + " + <img src=' " + yoda.urlImg + " '>" + " x <img src='" + wallE.urlImg + " '> = " + " <input type='text' id='res3'>";
+        childrensplay.innerHTML = "<Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + yoda.urlImg + " '> = " + calc8 + "</br>" +
+            "<Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + sonicbis.urlImg + " '> = " + calc9 + "</br>" +
+            "<Img id ='redim' src =' " + yoda.urlImg + " '>" + " + <Img id ='redim' src =' " + sonicbis.urlImg + " '> " + " - <Img id ='redim' src =' " + wallE.urlImg + " '> = " + calc10 + "</br>" +
+            "<Img id ='redim' src =' " + sonic.urlImg + " '>" + " + <Img id ='redim' src =' " + yoda.urlImg + " '>" + " x <Img id ='redim' src ='" + wallE.urlImg + " '> = " + " <input type='number' id='res3'>" +
+            "<button type='button' class='valider'>Valider</button>";
+
+        let boutonValider = document.querySelector(".valider");//valider
 
         //variable permettant de récupérer la réponse saisie par l'utilisateur
         let resultatlv3 = calc11;
@@ -213,14 +255,18 @@ function lvl3() {
             if (saisie3Utilisateur.value == resultatlv3 && compteurNiveau == 3) {
                 // apparition de la fleche salle suivante
                 togglevisi(fleche, "");
-                alert("3 Bien joué tu passes à la salle suivante!");
+                console.log("titre");
+                titrePopDiv.innerHTML = "Enigme Résolue"; // TITRE DE LA POP UP
+                console.log("regles");
+                pPopDiv.innerHTML = "<p id='p-div'>Facile comme 1 2 3! La salle suivante t’attends ! </p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+                togglevisi(popDiv, "");
+                fadeIn(popDiv,5);
                 //document.onload = ();
             }
             else if (saisie3Utilisateur.value !== resultatlv3 && compteurNiveau == 3){
                 // decrementation de la vie
                 vie--;
                 console.log(vie);
-                alert("3 Tu perds une vie et tu recommences!");
                 localStorage.setItem("VieEnregistree", vie);
                 window.location.reload();
                 console.log("vie: "+vie);
@@ -230,12 +276,99 @@ function lvl3() {
         })
 }
 
+// Event lors de la victoire sur chaque page
+fleche.addEventListener("click", function () {
+    sauvegarder();
+    document.location.href = "../02_QuestionMark/02_Index.html" ; // variable à redéfinir sur chaque page pour aller à la page suivante : chaine de charctère/lien relatif
+});
 
-//retour page d'accueil
-            if (vie==0) {
-             setTimeout (function () {document.location.href = ""
-                 }, 3000);
+// Chrono Global
+let bar = new ldBar("#chrono");
+
+// Save/restore Time à appeler quand victoire sur salle pour que fleche page suivante apparaisse
+function sauvegarder(){
+    localStorage.setItem("tempsGlobal",temps);
 }
+function recharger() {
+    if (localStorage.getItem("tempsGlobal")){
+        temps = parseInt(localStorage.getItem("tempsGlobal"));
+        console.log(temps);
+        setInterval(decrementation, 60000);
+    }
+
+}
+
+let tempsEcoule = setInterval(decrementation, 60000); // decrementation toutes les minutes
+let temps = 100; // on part de 100% de temps restant
+function decrementation(){
+    if (temps<1){ // si on est a 0 => on arrete le compteur: game over
+        clearInterval(tempsEcoule);
+        console.log("titre");
+        titrePopDiv.innerHTML = "Game Over !"; // TITRE DE LA POP UP
+        console.log("regles");
+        pPopDiv.innerHTML = "<p id='p-div'>On aurait pu croire en ton potentiel mais apparement non...</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
+        setTimeout (function () {document.location.href = "../index.html" // Retour page accueil
+        }, 5000);
+    }
+    else{
+        let pourcentageTemps = 100/60; // sinon on decrementate de 1.66% <=> 1 min sur 60min (en %)
+        temps -= pourcentageTemps;
+        bar.set(temps)
+    }
+}
+
+// DIV POP UP
+let popDiv = document.querySelector("#pop-div");
+let titrePopDiv = document.querySelector(".titre-pop-div");
+let pPopDiv = document.querySelector("#paragraph-pop-div");
+let closeDiv = document.querySelector(".fermer-div");
+
+// Opacité initiale de la pop
+popDiv.style.opacity = "0";
+
+// Pop Div caché au départ
+togglevisi(popDiv, 'none');
+
+// Fonction d'apparition graduelle -> show()
+function fadeIn(item,dureeApparition) { // dureeApparition est en ms soit 1000 ms = 1 seconde
+    let i = 0;
+    let k = window.setInterval(function() {
+        if (i >= 100) {
+            clearInterval(k);
+        } else {
+            item.style.opacity = i/100;
+            i++;
+        }
+    }, dureeApparition);
+}
+
+// Fonction de disparition graduelle -> hide()
+function fadeOut(item,dureeDisparition) { // dureeDisparition est en ms soit 1000 ms = 1 seconde
+    let i = 100;
+    let k = window.setInterval(function() {
+        if (i <= 0) {
+            clearInterval(k);
+        } else {
+            item.style.opacity = i/100;
+            i--;
+        }
+    }, dureeDisparition);
+}
+
+// Bouton [X] de fermeture de la pop - A copier tel quel
+closeDiv.addEventListener("click", function (){
+    fadeOut(popDiv, 10);
+    console.log("pop out");
+    setTimeout(function (){
+        togglevisi(popDiv, "none");
+        console.log("pop out 2")
+    }, 1000)
+});
+
+
+
 
 document.onload = lvl1();
 //document.onload = lvl2();
