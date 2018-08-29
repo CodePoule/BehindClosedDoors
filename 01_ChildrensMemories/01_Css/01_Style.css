@@ -3,27 +3,52 @@
 body {
     transition: background-color .5s;
     display: inline;
-    background-image: url("/01_Img/01_ChildrenBedroom.jpg");
+    background: url("../01_Img/01_ChildrenBedroom.jpg") no-repeat center fixed;
+    color: #5D544B;
+    background-size: cover;
 
 }
-
-.fiboNumbers{
-    width:80px;
-
+#res1,#res2,#res3{
+    font-size: 30px;
+    font-family: 'Indie Flower', cursive;
 }
 
-.fibonacci{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height:100px;
-    width: 800px;
-    font-size: 15px;
-    background: #E2C173 ;
-    text-shadow:2px 2px 4px darkgoldenrod;
-    border: white 1px solid;
-    border-radius: 10px 10px;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+.valider{
+    margin-left: 3px;
+    color: #5D544B;
+    background-color:#C1E5DF;
+    border-color: #82B4B3;
+    border-radius: 1px;
+    font-size: 30px;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+}
+
+.valider:hover{
+    color: white;
+    background:#82B4B3;
+}
+
+
+#redim{
+    width: 150px;
+}
+
+.childrensplay{
+    padding-top: 40px;
+    position:absolute;
+    top: 30%;
+    left : 30%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin:auto;
+    background-color: #FDF2EE;
+    height : 700px;
+    width :800px;
+    border: 5px #5D544B solid;
+    font-size: 50px;
+    font-family: 'Indie Flower', cursive;
 }
 
 #flex-container {
