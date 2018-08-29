@@ -28,15 +28,15 @@ body{
 }
 
 .item_salle1, .item_salle2, .item_salle3, .item_salle4, .item_salle5, .item_salle6 {
-background-color: hotpink;
+
 }
 
 .item_salle1 {
     position: absolute;
-    height: 101px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     top: 544px;
-    left: 1520px;
+    left: 1570px;
 }
 
 .item_salle2 {
@@ -54,16 +54,16 @@ background-color: hotpink;
 
 .item_salle3 {
     position: absolute;
-    height: 120px;
-    width: 130px;
+    height: 100px;
+    width: 100px;
     top: 395px;
-    left: 410px;
+    left: 430px;
 }
 
 .item_salle4 {
     position: absolute;
-    height: 160px;
-    width: 170px;
+    height: 100px;
+    width: 150px;
     top: 455px;
     left: 1740px;
 }
