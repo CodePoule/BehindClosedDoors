@@ -1,5 +1,6 @@
 body{
     display: flex;
+    background: url("../07_img/salle07bg.png");
 }
 
 /*image du coeur / non aligné encore. en attente d'intégration du reste du code*/
@@ -16,3 +17,78 @@ body{
         transform: scale(1.2);
     }
 }
+
+.tableau_central {
+    position: absolute;
+    top: 585px;
+    left: 950px;
+    background-color: blue;
+    height: 242px;
+    width: 350px;
+}
+
+.item_salle1, .item_salle2, .item_salle3, .item_salle4, .item_salle5, .item_salle6 {
+background-color: hotpink;
+}
+
+.item_salle1 {
+    position: absolute;
+    height: 101px;
+    width: 150px;
+    top: 544px;
+    left: 1520px;
+}
+
+.item_salle2 {
+    position: absolute;
+    height: 100px;
+    width: 135px;
+    top: 650px;
+    left: 415px;
+}
+
+#image_item_salle5 {
+    margin-left: 15px;
+
+}
+
+.item_salle3 {
+    position: absolute;
+    height: 120px;
+    width: 130px;
+    top: 395px;
+    left: 410px;
+}
+
+.item_salle4 {
+    position: absolute;
+    height: 160px;
+    width: 170px;
+    top: 455px;
+    left: 1740px;
+}
+
+.item_salle5 {
+    position: absolute;
+    height: 100px;
+    width: 140px;
+    top: 800px;
+    left: 30px;
+}
+
+#image_item_salle5 {
+    margin-left: 35px;
+}
+
+.item_salle6 {
+    position: absolute;
+    height: 100px;
+    width: 140px;
+    top: 245px;
+    left: 4px;
+}
+
+
+
+
+
