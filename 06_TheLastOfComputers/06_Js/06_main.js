@@ -213,6 +213,8 @@ function fakeVictory(){
         console.log("lol at u");
         togglevisi(popDivBlueScreen, "");
         fadeIn(popDivBlueScreen,5);
+        setTimeout (function () {document.location.href = "../07_TheCourt/07_Index.html" // Retour page 07
+        }, 9000);
         sauvegarder();
     }
     else{
