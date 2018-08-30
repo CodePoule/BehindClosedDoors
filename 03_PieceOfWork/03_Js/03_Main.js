@@ -1,3 +1,7 @@
+// Nom de la salle
+let nomSalle = document.querySelector("#nom-salle");
+nomSalle.innerHTML = "Piece Of Work";
+
 // A piece of work JS
 let PUZZLE_DIFFICULTY = 3; // A MODIFIER UNE FOIS QUE ÇA MARCHE
 const PUZZLE_HOVER_TINT = '#009900';
@@ -19,6 +23,12 @@ let mouse;
 let puzzleFacile = false;
 let puzzleMoyen = false;
 let puzzleDifficile = false;
+
+let deplacements = 10;
+let vie = 3;
+
+let affichage_compteur = document.querySelector(".compteur");
+affichage_compteur.innerHTML = deplacements;
 
 // Objet images pour le puzzle
 function ImgPuzzle(index, imgURL) {
@@ -98,7 +108,7 @@ function initPuzzle(){
     currentPiece = null;
     currentDropPiece = null;
     stage.drawImage(img, 0, 0, puzzleWidth, puzzleHeight, 0, 0, puzzleWidth, puzzleHeight);
-    createTitle("Cliquez pour éclater l'image en puzzle");
+    createTitle("Double-Clic pour éclater l'image en puzzle");
     buildPieces();
 }
 
@@ -131,7 +141,8 @@ function buildPieces(){
             yPos += pieceHeight;
         }
     }
-    document.onmousedown = shufflePuzzle;
+    document.ondblclick  = shufflePuzzle;
+    // document.onmousedown = shufflePuzzle;
 }
 
 // Mélange des pièces du puzzle
@@ -153,7 +164,8 @@ function shufflePuzzle(){
             yPos += pieceHeight;
         }
     }
-    document.onmousedown = onPuzzleClick;
+    document.ondblclick  = onPuzzleClick;
+    // document.onmousedown = onPuzzleClick;
 }
 
 // application du mélange sur TOUTES pièces du puzzle
@@ -181,6 +193,12 @@ function onPuzzleClick(e){
         stage.restore();
         document.onmousemove = updatePuzzle;
         document.onmouseup = pieceDropped;
+        console.log("selection pièce");
+        deplacements --;
+        affichage_compteur.innerHTML = deplacements;
+        console.log("nombre de déplacements : " + deplacements);
+        decrementation_vie();
+        console.log("la vie est de " + vie);
     }
 }
 
@@ -275,22 +293,253 @@ function resetPuzzleAndCheckWin(){
 
 // fin puzzle et reinitialisation
 function gameOver(){
-    document.onmousedown = null;
+    document.ondblclick  = null;
+    // document.onmousedown = null;
     document.onmousemove = null;
     document.onmouseup = null;
     if (puzzleFacile == true && puzzleMoyen == true && puzzleDifficile == false){
         puzzleDifficile = true;
-        // Apparition bouton salle suivant + local storage temps !
+        togglevisi(fleche, "");
+        console.log("titre");
+        titrePopDiv.innerHTML = "Bravo! "; // TITRE DE LA POP UP
+        console.log("regles");
+        // passage à la salle suivante
+        pPopDiv.innerHTML = "<p id='p-div'>Tu peux maintenant passer à la salle suivante.</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
     }
     if (puzzleFacile == true && puzzleMoyen == false && puzzleDifficile == false){
         puzzleMoyen = true;
         img.src = imgArray[2]; // image Niveau 3 du puzzle
         PUZZLE_DIFFICULTY = 5; // Difficulté Niveau 3 du Puzzle
+        console.log("passage niveau 3");
+        deplacements = 30;
+        affichage_compteur.innerHTML = deplacements;
+        console.log("nombre de déplacements au passage au niveau 3 : " + deplacements);
+        console.log("titre");
+        titrePopDiv.innerHTML = "Bravo !"; // TITRE DE LA POP UP
+        console.log("regles");
+        pPopDiv.innerHTML = "<p id='p-div'>Tu passe au dernier niveau ! <br> Tu as droit à 30 déplacements</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
     }
     if (puzzleFacile == false && puzzleMoyen == false && puzzleDifficile == false){
         puzzleFacile = true;
         img.src = imgArray[1]; // image Niveau 2 du puzzle
         PUZZLE_DIFFICULTY = 4; // Difficulté du Niveau 2 du puzzle
+        console.log("passage niveau 2");
+        deplacements = 15;
+        affichage_compteur.innerHTML = deplacements;
+        console.log("nombre de déplacements au passage au niveau 2 : " + deplacements);
+        console.log("titre");
+        titrePopDiv.innerHTML = "Bravo !"; // TITRE DE LA POP UP
+        console.log("regles");
+        pPopDiv.innerHTML = "<p id='p-div'>Tu passes au niveau 2 ! <br> Tu as droit à 15 déplacements</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
+
     }
     initPuzzle();
 }
+
+
+//fonction decrementation vie et déplacements
+// FONCTION VIE
+function togglevisi (item,State){
+    item.style.display = State;
+}
+
+let heart1 = document.querySelector("#heart1");
+let heart2 = document.querySelector("#heart2");
+let heart3 = document.querySelector("#heart3");
+
+togglevisi(heart1, "");
+togglevisi(heart2, "");
+togglevisi(heart3, "");
+
+function decrementation_vie() {
+    if (deplacements <= 0) {
+        vie --;
+        console.log("la vie est de : ");
+        console.log(vie);
+        console.log("le nombre de déplacements est de : ");
+        console.log(deplacements);
+
+        if (vie == 2) {
+            togglevisi(heart1, "none");
+            console.log("boucle vie 2");
+            console.log("titre");
+            titrePopDiv.innerHTML = "Perdu !"; // TITRE DE LA POP UP
+            console.log("regles");
+            pPopDiv.innerHTML = "<p id='p-div'>J'ai confiance en toi, essais encore...\n</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+            togglevisi(popDiv, "");
+            fadeIn(popDiv,5);
+            if (puzzleFacile == false) {
+                console.log("puzzleFacile false");
+                deplacements = 10;
+                affichage_compteur.innerHTML = deplacements;
+                console.log("le nombre de déplacements est de : "+ deplacements);
+            }
+            if (puzzleFacile == true) {
+                console.log("puzzleFacile true");
+                deplacements = 15;
+                affichage_compteur.innerHTML = deplacements;
+                console.log("le nombre de déplacements est de : "+ deplacements);
+            }
+            if (puzzleMoyen == true) {
+                console.log("puzzleMoyen true");
+                deplacements = 30;
+                affichage_compteur.innerHTML = deplacements;
+                console.log("le nombre de déplacements est de : "+ deplacements);
+            }
+        }
+        if (vie == 1) {
+            togglevisi(heart1, "none");
+            togglevisi(heart2, "none");
+            console.log("boucle vie 1");
+            titrePopDiv.innerHTML = "Perdu !"; // TITRE DE LA POP UP
+            console.log("regles");
+            pPopDiv.innerHTML = "<p id='p-div'>C’est ta dernière chance, ne la rate pas !\n</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+            togglevisi(popDiv, "");
+            fadeIn(popDiv,5);
+            if (puzzleFacile == false) {
+                console.log("puzzleFacile false");
+                deplacements = 10;
+                affichage_compteur.innerHTML = deplacements;
+                console.log("le nombre de déplacements est de : "+ deplacements);
+            }
+            if (puzzleFacile == true) {
+                console.log("puzzleFacile true");
+                deplacements = 15;
+                affichage_compteur.innerHTML = deplacements;
+                console.log("le nombre de déplacements est de : "+ deplacements);
+            }
+            if (puzzleMoyen == true) {
+                console.log("puzzleMoyen true");
+                deplacements = 30;
+                affichage_compteur.innerHTML = deplacements;
+                console.log("le nombre de déplacements est de : "+ deplacements);
+            }
+        }
+        if (vie == 0) {
+            togglevisi(heart1, "none");
+            togglevisi(heart2, "none");
+            togglevisi(heart3, "none");
+            console.log("boucle vie 3");
+            console.log("titre");
+            titrePopDiv.innerHTML = "Game Over !"; // TITRE DE LA POP UP
+            console.log("regles");
+            pPopDiv.innerHTML = "<p id='p-div'>On aurait pu croire en ton potentiel mais apparement non...</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+            togglevisi(popDiv, "");
+            fadeIn(popDiv,5);
+            setTimeout (function () {document.location.href = "../index.html" // Retour page accueil
+            }, 5000);
+        }
+    }
+}
+
+//FONCTION FLECHE
+let fleche = document.querySelector(".fleche");
+togglevisi(fleche, "none");
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
+
+// Event lors de la victoire sur chaque page
+fleche.addEventListener("click", function () {
+    sauvegarder();
+    document.location.href = pageSuivante; // variable à redéfinir sur chaque page pour aller à la page suivante : chaine de charctère/lien relatif
+});
+
+// Chrono Global
+let bar = new ldBar("#chrono");
+
+// Save/restore Time à appeler quand victoire sur salle pour que fleche page suivante apparaisse
+function sauvegarder(){
+    localStorage.setItem("tempsGlobal",temps);
+}
+function recharger() {
+    if (localStorage.getItem("tempsGlobal")){
+        temps = parseInt(localStorage.getItem("tempsGlobal"));
+        console.log(temps);
+        setInterval(decrementation, 60000);
+    }
+
+}
+
+let tempsEcoule = setInterval(decrementation, 60000); // decrementation toutes les minutes
+let temps = 100; // on part de 100% de temps restant
+function decrementation(){
+    if (temps<1){ // si on est a 0 => on arrete le compteur: game over
+        clearInterval(tempsEcoule);
+        console.log("titre");
+        titrePopDiv.innerHTML = "Game Over !"; // TITRE DE LA POP UP
+        console.log("regles");
+        pPopDiv.innerHTML = "<p id='p-div'>On aurait pu croire en ton potentiel mais apparement non...</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+        togglevisi(popDiv, "");
+        fadeIn(popDiv,5);
+        setTimeout (function () {document.location.href = "../index.html" // Retour page accueil
+        }, 5000);
+    }
+    else{
+        let pourcentageTemps = 100/60; // sinon on decrementate de 1.66% <=> 1 min sur 60min (en %)
+        temps -= pourcentageTemps;
+        bar.set(temps)
+    }
+}
+
+// DIV POP UP
+let popDiv = document.querySelector("#pop-div");
+let titrePopDiv = document.querySelector(".titre-pop-div");
+let pPopDiv = document.querySelector("#paragraph-pop-div");
+let closeDiv = document.querySelector(".fermer-div");
+
+// Opacité initiale de la pop
+popDiv.style.opacity = "0";
+
+// Pop Div caché au départ
+togglevisi(popDiv, 'none');
+
+// Fonction d'apparition graduelle -> show()
+function fadeIn(item,dureeApparition) { // dureeApparition est en ms soit 1000 ms = 1 seconde
+    let i = 0;
+    let k = window.setInterval(function() {
+        if (i >= 100) {
+            clearInterval(k);
+        } else {
+            item.style.opacity = i/100;
+            i++;
+        }
+    }, dureeApparition);
+}
+
+// Fonction de disparition graduelle -> hide()
+function fadeOut(item,dureeDisparition) { // dureeDisparition est en ms soit 1000 ms = 1 seconde
+    let i = 100;
+    let k = window.setInterval(function() {
+        if (i <= 0) {
+            clearInterval(k);
+        } else {
+            item.style.opacity = i/100;
+            i--;
+        }
+    }, dureeDisparition);
+}
+// Bouton [X] de fermeture de la pop - A copier tel quel
+closeDiv.addEventListener("click", function (){
+    fadeOut(popDiv, 10);
+    console.log("pop out");
+    setTimeout(function (){
+        togglevisi(popDiv, "none");
+        console.log("pop out 2")
+    }, 1000)
+});
