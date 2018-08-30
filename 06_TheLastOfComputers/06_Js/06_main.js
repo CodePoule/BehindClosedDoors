@@ -134,7 +134,7 @@ function recharger() {
 }
 
 let tempsEcoule = setInterval(decrementation, 60000); // decrementation toutes les minutes
-let temps = 100; // on part de 100% de temps restant
+// let temps = 100; // on part de 100% de temps restant
 function decrementation(){
     if (temps<1){ // si on est a 0 => on arrete le compteur: game over
         clearInterval(tempsEcoule);
@@ -229,5 +229,5 @@ function fakeVictory(){
 }
 
 btnValider.addEventListener("click", fakeVictory);
-
+document.onload=recharger(), decrementation();
 

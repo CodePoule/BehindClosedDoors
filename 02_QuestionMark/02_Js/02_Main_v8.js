@@ -200,8 +200,9 @@ togglevisi(fleche, "none");
 // Event lors de la victoire sur chaque page
 fleche.addEventListener("click", function () {
     sauvegarder();
-    document.location.href = pageSuivante; // variable à redéfinir sur chaque page pour aller à la page suivante : chaine de charctère/lien relatif
+    document.location.href = "../03_PieceOfWork/03_Index.html"; // variable à redéfinir sur chaque page pour aller à la page suivante : chaine de charctère/lien relatif
 });
+
 
 // Chrono Global
 let bar = new ldBar("#chrono");
@@ -210,7 +211,7 @@ let bar = new ldBar("#chrono");
 
 
 let tempsEcoule = setInterval(decrementation, 60000); // decrementation toutes les minutes
-let temps = 100; // on part de 100% de temps restant
+// let temps = 100; // on part de 100% de temps restant
 function decrementation(){
     if (temps<1){ // si on est a 0 => on arrete le compteur: game over
         clearInterval(tempsEcoule);
@@ -279,5 +280,4 @@ closeDiv.addEventListener("click", function (){
     }, 1000)
 });
 
-
-
+document.onload=recharger(), decrementation();
