@@ -2,6 +2,11 @@ body {
 
     background: url("../06_Img/06_bg.png") no-repeat center fixed;
     background-size: cover;
+}
+
+.text{
+    color: lawngreen;
+    font-family: 'Press Start 2P', cursive;
 
 }
 
@@ -15,30 +20,59 @@ body {
 
 /*countdown*/
 #clockdiv{
+
     color:red;
-    font-weight: 100;
-    font-size: 100px;
-    text-align: center;
+    font-size: 45px;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .clockWrap{
-    padding: 30px 10px 0 10px;
+    /*background-color: black;*/
+    padding-left: 90px;
+    padding-top: 30px;
 }
 
 .minutes, .smalldots, .seconds{
     text-align: center;
 }
 
+.blockcmd {
+    display:flex;
+}
+
 .inputFib{
     padding: 10px;
-    width: 350px;
-    margin: auto;
+    padding-left: 44%;
+    padding-top:9.48551%;
+}
+textarea, input { outline: none; }
+
+#inputFibOk{
+
+    background-color: rgba(255,255,255,0) !important;
+    border:none;
+    width:250px;
+    font-size: 30px;
+    padding: 10px;
+    color: lawngreen;
+    text-align: left;
+    font-family: 'Press Start 2P', cursive;
+
+}
+#inputFibOk:focus {
+    border: transparent;
 }
 
 .fibBtn{
     padding:10px;
     width:250px;
     margin:auto;
+    background-color: black;
+    color: lawngreen;
+    border: 1px grey solid;
+    font-size: 30px;
+    font-family: 'Press Start 2P', cursive;
+
 }
 
 
@@ -138,11 +172,11 @@ body {
     height:100px;
     width: 800px;
     font-size: 15px;
-    background: #E2C173 ;
+    background:#002;
     text-shadow:2px 2px 4px darkgoldenrod;
     border: white 1px solid;
     border-radius: 10px 10px;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
-    margin-left: auto;
+    margin-left: 33%;
     margin-right: auto;
 }

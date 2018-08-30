@@ -1,5 +1,8 @@
+
 let vie = 3;
 
+//variables audio
+let blueScreenScreamOfDeath = document.querySelector('.bsod');
 
 // Nom de la salle
 let nomSalle = document.querySelector("#nom-salle");
@@ -212,7 +215,10 @@ function fakeVictory(){
         // POP UP ecran bleu
         console.log("lol at u");
         togglevisi(popDivBlueScreen, "");
+        blueScreenScreamOfDeath.play();
         fadeIn(popDivBlueScreen,5);
+        setTimeout (function () {document.location.href = "../07_TheCourt/07_Index.html" // Retour page 07
+        }, 7000);
         sauvegarder();
     }
     else{
@@ -223,3 +229,5 @@ function fakeVictory(){
 }
 
 btnValider.addEventListener("click", fakeVictory);
+
+
