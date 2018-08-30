@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <title>The Last Of Computers</title>
     <link rel="stylesheet" href="06_Css/06_Style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="06_Css/06_templateCss.css">
     <script src="06_Js/06_api.js"></script>
 </head>
-<body>
+<body>       <div id="pop-div-blueImg"></div>
 <div id="template">
 
     <!--Règles des salles-->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <p> De retour sur la Terre ! </p>
-            <p>mais il semblerait que tu as voyagé dans le temps à un siècle inquiétant.
+        <p class="text"> De retour sur la Terre ! </p>
+        <p class="text">mais il semblerait que tu as voyagé dans le temps à un siècle inquiétant.
             Pour t'échapper de là tu dois retrouver la bonne combinaison et la rentrer
-                dans le dernier ordinateur ayant survecu à l'apocalypse.</p>
-            <p>Sois rapide ! car le compte à rebours à commencé.</p>
+            dans le dernier ordinateur ayant survecu à l'apocalypse.</p>
+        <p class="text">Sois rapide ! car le compte à rebours à commencé.</p>
     </div>
 
     <!--Bouton ?-->
@@ -46,7 +47,7 @@
     <h1 id="nom-salle">Mettre le titre de chaque salle en js</h1>
 
     <div id="flex-pop-div">
-        <div id="pop-div-blueImg"></div>
+
         <div id="pop-div">
             <div id="titre-div">
                 <div id="h2-pop-div"><h2 class="titre-pop-div"><!-- Titre div pop --></h2></div>
@@ -58,40 +59,45 @@
 
 </div>
 
-    <div class = "fibonacci">
-        <div class = "chiffre1"><img src="06_Img/chiffre_1.png" class="fiboNumbers"></div>
-        <div class = "chiffre2"><img src="06_Img/chiffre_2.png" class="fiboNumbers"></div>
-        <div class = "chiffre3"><img src="06_Img/chiffre_3.png" class="fiboNumbers"></div>
-        <div class = "chiffre5"><img src="06_Img/chiffre_5.png" class="fiboNumbers"></div>
-        <div class = "chiffre8"><img src="06_Img/chiffre_8.png" class="fiboNumbers"></div>
-        <div class = "lastnumber"><img src="" class="fiboNumbers"></div>
+<div class="fibonacci">
+    <div class="chiffre1"><img src="06_Img/chiffre_1.png" class="fiboNumbers"></div>
+    <div class="chiffre2"><img src="06_Img/chiffre_2.png" class="fiboNumbers"></div>
+    <div class="chiffre3"><img src="06_Img/chiffre_3.png" class="fiboNumbers"></div>
+    <div class="chiffre5"><img src="06_Img/chiffre_5.png" class="fiboNumbers"></div>
+    <div class="chiffre8"><img src="06_Img/chiffre_8.png" class="fiboNumbers"></div>
+    <div class="lastnumber"><img src="" class="fiboNumbers"></div>
 
-    </div>
+</div>
 
-    <div id="wrapper">
+<div id="wrapper">
 
     <div class="bgContainer">
 
-            <!--countdown-->
-            <div id="clockdiv">
-                <div class="clockWrap">
-                    <span class="minutes"></span>
-                    <span class="smalldots">:</span>
-                    <span class="seconds"></span>
-                </div>
+        <!--countdown-->
+        <div id="clockdiv">
+            <div class="clockWrap">
+                <span class="minutes"></span>
+                <span class="smalldots">:</span>
+                <span class="seconds"></span>
             </div>
-            <!--fin du countdown-->
-            <!--input pour suite Fibo-->
-            <div class="inputFib">
-                <input id="inputFibOk" type="number" placeholder="Enter the number">
+        </div>
+        <!--fin du countdown-->
 
-            </div>
-
-        <button class="fibBtn">Valider</button>
     </div>
 </div>
 
+<!--input pour suite Fibo-->
+<div class="inputFib">
 
+
+    <div class="blockcmd">
+        <p class="text">Root$TK~ </p>
+        <input id="inputFibOk" type="" autofocus placeholder="">
+    </div>
+
+
+    <button class="fibBtn">Valider</button>
+</div>
 <script src="06_Js/06_Main.js"></script>
 <script src="06_Js/jquery.js"></script>
 </body>
