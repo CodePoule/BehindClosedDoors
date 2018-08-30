@@ -1,0 +1,17 @@
+pour ajouter les pistes audio à vos salles:
+
+1. créer un dossier audio dans le dossier de la salle si pas déja fait
+
+2. mettre la piste audio dedans
+
+3.dans le html:  <audio class="Nom De La Classe" src="Nom Du Fichier.extension"></audio>
+
+4. dans le js: 
+
+//variables audio
+let nom de la variable audio = document.querySelector('.nom de la classe');
+
+
+5. appel de la fonction dans votre page js:     nom de la variable audio.play();
+
+// 
