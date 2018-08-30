@@ -21,10 +21,9 @@ body{
 .tableau_central {
     position: absolute;
     top: 585px;
-    left: 950px;
-    background-color: blue;
+    left: 945px;
     height: 242px;
-    width: 350px;
+    width: 362px;
 }
 
 .item_salle1, .item_salle2, .item_salle3, .item_salle4, .item_salle5, .item_salle6 {
@@ -35,7 +34,7 @@ body{
     position: absolute;
     height: 100px;
     width: 100px;
-    top: 544px;
+    top: 538px;
     left: 1570px;
 }
 
@@ -47,9 +46,22 @@ body{
     left: 415px;
 }
 
+#image_item_salle2 {
+    margin-bottom: 20px;
+}
+
 #image_item_salle5 {
     margin-left: 15px;
+}
 
+#image_item_salle3 {
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#image_item_salle6 {
+    margin-left: 15px;
 }
 
 .item_salle3 {

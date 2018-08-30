@@ -1,3 +1,4 @@
+//DECLARATION VARIABLES
 let compteurOrdre = 1;
 let vie = 1;
 
@@ -21,10 +22,12 @@ let item_salle6 = document.querySelector(".item_salle6");
 
 let coeur_battement = document.querySelector("#coeur_battement");
 
+//FONCTION TOGGLEVISI
 function togglevisi (item,State){
     item.style.display = State;
 }
 
+//Au chargement de la page les items sont cachés
 togglevisi(image_item_salle1, "none");
 togglevisi(image_item_salle2, "none");
 togglevisi(image_item_salle3, "none");
@@ -33,6 +36,7 @@ togglevisi(image_item_salle5, "none");
 togglevisi(image_item_salle6, "none");
 togglevisi(coeur_battement, "");
 
+//Lorsque le curseur passent sur les items, ils apparaissent
 item_salle1.addEventListener("mouseover",function (){
     togglevisi(image_item_salle1, "")
 });
@@ -52,6 +56,7 @@ item_salle6.addEventListener("mouseover",function (){
     togglevisi(image_item_salle6, "")
 });
 
+//DEBUT SCRIPT DRAG AND DROP
 function allowDrop(ev) {
     ev.preventDefault();
     console.log("fonction ALLOWDROP");
@@ -165,5 +170,7 @@ function drop(ev) {
         togglevisi(coeur_battement, "none");
     }
 }
+//FIN SCRIPT DRAG AND DROP
+
 
 
