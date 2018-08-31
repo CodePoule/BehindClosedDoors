@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Train fantome</title>
+
+    <script src="../Template/Template_Js/Template_Loading-bar-API.js"></script>
+
+    <link rel="stylesheet" href="04_Css/04_Style.css">
+    <link rel="stylesheet" href="../Template/Template_Css/Template_Style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="04_Fonts/stylesheet.css">
+
+</head>
+<body>
+<video id='background' type='video/mp4' autoplay></video>
+<div id="template">
+
+    <!--Règles des salles-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <p>Boo! te voilà passager dans un train à destination inconnue.</p>
+        <p>Pour t'en sortir il te faudra répondre à une énigme.</p><p>Soit attentif aux indices apparaissant au long du voyage.</p>
+    </div>
+
+    <!--Bouton ?-->
+    <div id="main">
+        <span onclick="openNav()"><i id="iconRules" class="far fa-question-circle"></i></span>
+    </div>
+
+    <div id="temp-right">
+        <!--Chrono Global-->
+        <div id="chrono"
+             data-preset="bubble"
+             class="ldBar label-center"
+             data-value="100"
+             data-pattern-size="100">
+        </div>
+        <!--vie-->
+        <div class="vie">
+            <img src="../Template/Img/Heart.png" height="76" width="76" id="heart1"/>
+            <img src="../Template/Img/Heart.png" height="76" width="76" id="heart2"/>
+            <img src="../Template/Img/Heart.png" height="76" width="76" id="heart3"/>
+        </div>
+    </div>
+
+    <!--fleche salle suivante-->
+    <div class="fleche">
+        <i class="far fa-arrow-alt-circle-right"></i>
+    </div>
+
+    <!--&lt;!&ndash;<div class="testbox">-->
+        <!--<h1>this is a title test</h1>-->
+        <!--<p>another lorem ipsum test blablabla</p>-->
+    <!--</div>&ndash;&gt;-->
+    <h1 id="nom-salle">Mettre le titre de chaque salle en js</h1>
+
+    <div id="flex-pop-div">
+        <div id="pop-div">
+            <div id="titre-div">
+                <div id="h2-pop-div"><h2 class="titre-pop-div"><!-- Titre div pop --></h2></div>
+                <i class="fas fa-times fermer-div"></i>
+            </div>
+            <div id="paragraph-pop-div"><!-- Contenu de la div Pop --></div>
+        </div>
+    </div>
+
+</div>
+<div id="flex-container">
+    <div id="flex-formulaire">
+        <div id="je-suis">
+            <p id="question">Je suis ?</p>
+            <form>
+                <input type="text" id="ghostAnswer" name="Tapez votre indice" placeholder="Entrez votre réponse">
+                <input type="button" value="Valider" id="bouton_valider">
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Scripts -->
+    <script src="../Template/Template_Js/jquery-3.3.1.min.js"></script>
+    <script src="04_Js/04_main.js"></script>
+</body>
+</html>
