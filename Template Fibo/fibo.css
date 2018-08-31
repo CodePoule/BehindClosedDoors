@@ -23,7 +23,7 @@
 }
 
 /*salle 4
-..chiffre5,.chiffre8{
+.chiffre5,.chiffre8{
     display:none;
 }
 
@@ -58,5 +58,10 @@
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
     margin-left: auto;
     margin-right: auto;
+}
+
+#just-fibo{
+    position: absolute;
+    width :100%;
 }
 
