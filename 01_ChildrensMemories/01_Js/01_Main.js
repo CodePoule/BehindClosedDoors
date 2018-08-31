@@ -76,8 +76,8 @@ togglevisi(fleche, "none");
 
 let compteurNiveau = 1;
 
-localStorage.setItem("VieEnregistree", 3);
-
+// localStorage.setItem("VieEnregistree", 3);
+let vie=3;
 
 let childrensplay = document.querySelector(".childrensplay");
 
@@ -101,8 +101,14 @@ function getRandomInt(min, max) {
 
 //Fonction du jeu niveau 1
 function lvl1() {
-    vie = localStorage.getItem("VieEnregistree");
-    decrementation_vie();
+
+    yoda.valeur = getRandomInt(0, 10);
+    sonic.valeur = getRandomInt(5, 15);
+    wallE.valeur = getRandomInt(10, 20);
+
+
+    // vie = localStorage.getItem("VieEnregistree");
+    // decrementation_vie();
 
 
     //variables de calcul
@@ -146,15 +152,16 @@ function lvl1() {
             // decrementation de la vie
             vie--;
             console.log(vie);
-            localStorage.setItem("VieEnregistree", vie);
-            sauvegarder();
-            window.location.reload();
+            // localStorage.setItem("VieEnregistree", vie);
+            // sauvegarder();
+            // window.location.reload();
             console.log("vie: " + vie);
-            vie = localStorage.getItem("VieEnregistree");
-            recharger();
-            decrementation()
+            // vie = localStorage.getItem("VieEnregistree");
+            // recharger();
+            // decrementation()
             decrementation_vie();
 
+            document.onload = lvl1();
         }
 
     })
@@ -163,8 +170,8 @@ function lvl1() {
 
 //Fonction du jeu niveau 2
 function lvl2() {
-    vie = localStorage.getItem("VieEnregistree");
-    decrementation_vie();
+    // vie = localStorage.getItem("VieEnregistree");
+    // decrementation_vie();
 
 
     yoda.valeur = getRandomInt(0, 10);
@@ -211,14 +218,17 @@ function lvl2() {
             // decrementation de la vie
             vie--;
             console.log(vie);
-            localStorage.setItem("VieEnregistree", vie);
-            sauvegarder();
-            window.location.reload();
+            // localStorage.setItem("VieEnregistree", vie);
+            // sauvegarder();
+            // window.location.reload();
             console.log("vie: " + vie);
-            vie = localStorage.getItem("VieEnregistree");
-            recharger();
-            decrementation();
+            // vie = localStorage.getItem("VieEnregistree");
+            // recharger();
+            // decrementation();
             decrementation_vie();
+            compteurNiveau = 1;
+            document.onload = lvl1();
+
 
         }
 
@@ -268,14 +278,17 @@ function lvl3() {
             // decrementation de la vie
             vie--;
             console.log(vie);
-            localStorage.setItem("VieEnregistree", vie);
-            sauvegarder();
-            window.location.reload();
+            // localStorage.setItem("VieEnregistree", vie);
+            // sauvegarder();
+            // window.location.reload();
             console.log("vie: " + vie);
-            vie = localStorage.getItem("VieEnregistree");
-            recharger();
-            decrementation();
+            // vie = localStorage.getItem("VieEnregistree");
+            // recharger();
+            // decrementation();
             decrementation_vie();
+            compteurNiveau = 1;
+            document.onload = lvl1();
+
         }
     })
 }
