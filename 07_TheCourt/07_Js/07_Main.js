@@ -1,3 +1,4 @@
+let endGameVideo = document.querySelector("#end");
 
 // Nom de la salle
 let nomSalle = document.querySelector("#nom-salle");
@@ -73,6 +74,10 @@ item_salle5.addEventListener("mouseover", function () {
 item_salle6.addEventListener("mouseover", function () {
     togglevisi(image_item_salle6, "")
 });
+
+// Display et opacité de la vidéo de fin
+togglevisi(endGameVideo, "none");
+endGameVideo.style.opacity = "0";
 
 //DEBUT SCRIPT DRAG AND DROP
 function allowDrop(ev) {
@@ -187,6 +192,12 @@ function drop(ev) {
             vie--;
             console.log("la vie est de : " + vie);
         }
+    }
+    if (compteurOrdre == 7){
+        // vidéo pop end
+        togglevisi(endGameVideo,"");
+        fadeIn(endGameVideo,15);
+        endGameVideo.innerHTML = "<source src='07_Video/07_End.mp4'>";
     }
 
     if (vie == 0) {
