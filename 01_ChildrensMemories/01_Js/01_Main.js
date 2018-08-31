@@ -91,7 +91,6 @@ function ItemPop(valeur, urlImg, altImg) {
 //variables d'images avec leurs valeurs correspondantes
 let yoda = new ItemPop(getRandomInt(0, 10), '01_Img/01_yoda.png', 'image yoda');
 let sonic = new ItemPop(getRandomInt(5, 15), '01_Img/01_sonic.png', 'image sonic');
-let sonicbis = new ItemPop(sonic.valeur * 2, '01_Img/01_sonicbis.png', 'image sonicbis');
 let wallE = new ItemPop(getRandomInt(10, 20), '01_Img/01_wallE.png', 'image wall-e');
 
 //fonction générant un nombre aléatoire pour chacune des images
@@ -105,7 +104,9 @@ function lvl1() {
     yoda.valeur = getRandomInt(0, 10);
     sonic.valeur = getRandomInt(5, 15);
     wallE.valeur = getRandomInt(10, 20);
-
+    console.log("yoda = "+ yoda.valeur);
+    console.log("sonic = "+ sonic.valeur);
+    console.log("wallE = "+ wallE.valeur);
 
     // vie = localStorage.getItem("VieEnregistree");
     // decrementation_vie();
@@ -178,11 +179,15 @@ function lvl2() {
     sonic.valeur = getRandomInt(5, 15);
     wallE.valeur = getRandomInt(10, 20);
 
+    console.log("yoda = "+ yoda.valeur);
+    console.log("sonic = "+ sonic.valeur);
+    console.log("wallE = "+ wallE.valeur);
+
     //variables de calcul
     let calc4 = yoda.valeur * 3;
     let calc5 = yoda.valeur * 2 + sonic.valeur;
     let calc6 = yoda.valeur + sonic.valeur - wallE.valeur;
-    let calc7 = sonic.valeur + (yoda.valeur * wallE.valeur);
+    let calc7 = yoda.valeur + (sonic.valeur * wallE.valeur);
     console.log("niveau 2 : " + calc7);
 
     //affichage des éléments dans la page html
@@ -239,6 +244,13 @@ function lvl3() {
     yoda.valeur = getRandomInt(0, 10);
     sonic.valeur = getRandomInt(5, 15);
     wallE.valeur = getRandomInt(10, 20);
+    let valeurSonicbis = sonic.valeur*2;
+    let sonicbis = new ItemPop(valeurSonicbis, '01_Img/01_sonicbis.png', 'image sonicbis');
+
+    console.log("yoda = "+ yoda.valeur);
+    console.log("sonic = "+ sonic.valeur);
+    console.log("sonicbis = "+ sonicbis.valeur);
+    console.log("wallE = "+ wallE.valeur);
 
     let calc8 = yoda.valeur * 3;
     let calc9 = yoda.valeur * 2 + sonicbis.valeur;
