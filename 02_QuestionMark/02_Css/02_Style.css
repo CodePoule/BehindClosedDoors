@@ -1,6 +1,6 @@
 body{
-    width: 50%;
-    background-image: url("../img/question_the_answer.jpg");
+    width: 100%;
+    background: url("../img/question_the_answer.jpg") no-repeat fixed;
 	font-family: fantasy;
 }
 
@@ -14,9 +14,14 @@ h1 {
     margin-bottom : 20px;
 }
 
+#flex-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 150px;
+}
+
 #conteneur{
-	margin-top : 100px;
-    margin-left : 300px;
     padding : 50px;
 	padding-top : 10px;
     border: 5px solid #fff;
@@ -139,6 +144,14 @@ b{
     display:none;
 }
 
+#just-fibo{
+    position: fixed;
+    width :100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+
 .fiboNumbers{
     width:80px;
     margin-left: auto;
@@ -156,12 +169,16 @@ b{
     height:100px;
     width: 800px;
     font-size: 15px;
-    background: #E2C173 ;
+    background: #586E6E;
     text-shadow:2px 2px 4px darkgoldenrod;
     border: white 1px solid;
     border-radius: 10px 10px;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
-    margin-left: 33%;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.75);
+    margin-left: auto;
     margin-right: auto;
+}
+
+#template{
+    position: absolute;
 }
 

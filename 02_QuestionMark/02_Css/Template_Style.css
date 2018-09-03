@@ -7,13 +7,13 @@ body {
 #template{
     z-index: 1000;
     width: 100%;
-    /*position: absolute;*/
+    position: absolute;
 }
 
 .vie{
-    float: right;
     margin-top: 10px;
     margin-right: 10px;
+    display: inline-block;
 }
 
 .fleche {
@@ -68,6 +68,9 @@ p{
     padding: 16px;
     font-size:30px;
     cursor:pointer;
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 
 /* icon [?] Template */
@@ -88,8 +91,9 @@ p{
 
 /* div coeur et temps */
 #temp-right{
-    margin-right: 30px;
-    margin-top: -70px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
 }
 
 /* Début css chrono global */
