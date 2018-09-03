@@ -53,7 +53,7 @@ function initializeClock(id, endtime) {
             pPopDiv.innerHTML = "<p id='p-div'>On aurait pu croire en ton potentiel mais apparement non...</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
             togglevisi(popDiv, "");
             fadeIn(popDiv,5);
-            setTimeout (function () {document.location.href = "../01_ChildrensMemories/01_Index.html" // Retour page 01
+            setTimeout (function () {document.location.href = "../index.html" // Retour accueil
             }, 5000);
         }
     }

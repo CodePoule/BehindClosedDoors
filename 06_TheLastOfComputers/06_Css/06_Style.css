@@ -1,5 +1,5 @@
 body {
-
+    overflow: hidden;
     background: url("../06_Img/06_bg.png") no-repeat center fixed;
     background-size: cover;
 }
@@ -7,7 +7,6 @@ body {
 .text{
     color: lawngreen;
     font-family: 'Press Start 2P', cursive;
-
 }
 
 #wrapper{
@@ -75,108 +74,6 @@ textarea, input { outline: none; }
 
 }
 
-
-
-/*css de la vie*/
-.vie{
-    float: right;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-/*barre de nav des regles*/
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
-    font-size:30px;
-    cursor:pointer;
-    width: 76px;
-}
-
-/*icon [?]*/
-#iconRules{
-    margin: 10px auto 0 auto;
-    animation: beat 1.6s infinite linear;
-}
-/*animation sur l icon */
-@keyframes beat {
-    from{
-        transform: scale(1.0);
-    }
-    to {
-        transform: scale(1.2);
-    }
-}
-
-/*SUITE FIBONACCI */
-@keyframes stretch {
-    0% {
-        transform: scale(.3);
-        border-radius: 100%;
-    }
-
-    100% {
-        transform: scale(1.5);
-
-    }
-}
-
-.fiboNumbers{
-    width:80px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    justify-content: center;
-    animation: stretch 1.8s ease-out 0s alternate infinite none running;
-}
-
 .fibonacci{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    height:100px;
-    width: 800px;
-    font-size: 15px;
-    background:#002;
-    text-shadow:2px 2px 4px darkgoldenrod;
-    border: white 1px solid;
-    border-radius: 10px 10px;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
-    margin-left: 33%;
-    margin-right: auto;
+    background: linear-gradient(#D2E3EF, #495927);
 }
