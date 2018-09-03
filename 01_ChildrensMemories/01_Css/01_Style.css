@@ -6,6 +6,7 @@ body {
     background: url("../01_Img/01_ChildrenBedroom.jpg") no-repeat center fixed;
     color: #5D544B;
     background-size: cover;
+    font-family: 'Indie Flower', cursive;
 
 }
 #res1,#res2,#res3{
@@ -37,7 +38,7 @@ body {
 .childrensplay{
     padding-top: 40px;
     position:absolute;
-    top: 30%;
+    top: 20%;
     left : 30%;
     justify-content: center;
     text-align: center;

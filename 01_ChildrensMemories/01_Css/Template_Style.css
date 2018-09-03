@@ -140,6 +140,8 @@ p{
     color: white;
     position: fixed;
     bottom: 0;
+    font-family: 'Indie Flower', cursive;
+    font-size: 40px;
 }
 
 /* Div Pop */
