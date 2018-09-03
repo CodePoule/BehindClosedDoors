@@ -10,65 +10,79 @@
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 <body onload="init()">
-<div id="template">
-
-    <!--Règles des salles-->
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <p>Pour finir cette salle, tu devras completer correctement un puzzle, il y a trois niveaux de difficulté. <br>
-        Attention ! tu as un nombre de déplacements limités.</p>
-    </div>
-
-    <!--Bouton ?-->
-    <div id="main">
-        <span onclick="openNav()"><i id="iconRules" class="far fa-question-circle"></i></span>
-    </div>
-
-    <div id="temp-right">
-        <!--Chrono Global-->
-        <div id="chrono"
-             data-preset="bubble"
-             class="ldBar label-center"
-             data-value="100"
-             data-pattern-size="100">
-        </div>
-        <!--vie-->
-        <div class="vie">
-            <img src="03_Img/Heart.png" height="76" width="76" id="heart1"/>
-            <img src="03_Img/Heart.png" height="76" width="76" id="heart2"/>
-            <img src="03_Img/Heart.png" height="76" width="76" id="heart3"/>
-        </div>
-    </div>
-
-    <!--fleche salle suivante-->
-    <div class="fleche">
-        <i class="far fa-arrow-alt-circle-right"></i>
-    </div>
-
-    <!--<div class="testbox">
-        <h1>this is a title test</h1>
-        <p>another lorem ipsum test blablabla</p>
-    </div>-->
-    <h1 id="nom-salle">Mettre le titre de chaque salle en js</h1>
-
-    <div id="flex-pop-div">
-        <div id="pop-div">
-            <div id="titre-div">
-                <div id="h2-pop-div"><h2 class="titre-pop-div"><!-- Titre div pop --></h2></div>
-                <i class="fas fa-times fermer-div"></i>
-            </div>
-            <div id="paragraph-pop-div"><!-- Contenu de la div Pop --></div>
-        </div>
-    </div>
-
-    <div class = "texte_compteur">
-        Il vous reste
-        <br>
-        <span class="compteur">--</span>
-        <br>
-        déplacements
-    </div>
+<!--Fibonacci-->
+<div id="just-fibo">
+<div class = "fibonacci">
+    <div class = "chiffre1"><img src="03_Img/chiffre_1.png" class="fiboNumbers"></div>
+    <div class = "chiffre2"><img src="03_Img/chiffre_2.png" class="fiboNumbers"></div>
+    <div class = "chiffre3"><img src="03_Img/chiffre_3.png" class="fiboNumbers"></div>
+    <div class = "chiffre5"><img src="03_Img/chiffre_5.png" class="fiboNumbers"></div>
+    <div class = "chiffre8"><img src="03_Img/chiffre_8.png" class="fiboNumbers"></div>
+    <div class = "lastnumber"><img src="" class="fiboNumbers"></div>
 </div>
+</div>
+
+    <div id="template">
+        <!--Règles des salles-->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <p>Pour finir cette salle, tu devras completer correctement un puzzle, il y a trois niveaux de difficulté. <br>
+                Attention ! tu as un nombre de déplacements limités.</p>
+        </div>
+
+        <!--Bouton ?-->
+        <div id="main">
+            <span onclick="openNav()"><i id="iconRules" class="far fa-question-circle"></i></span>
+        </div>
+
+        <div id="temp-right">
+            <!--Chrono Global-->
+            <div id="chrono"
+                 data-preset="bubble"
+                 class="ldBar label-center"
+                 data-value="100"
+                 data-pattern-size="100">
+            </div>
+            <!--vie-->
+            <div class="vie">
+                <img src="03_Img/Heart.png" height="76" width="76" id="heart1"/>
+                <img src="03_Img/Heart.png" height="76" width="76" id="heart2"/>
+                <img src="03_Img/Heart.png" height="76" width="76" id="heart3"/>
+            </div>
+        </div>
+
+        <!--fleche salle suivante-->
+        <div class="fleche">
+            <i class="far fa-arrow-alt-circle-right"></i>
+        </div>
+
+        <!--<div class="testbox">
+            <h1>this is a title test</h1>
+            <p>another lorem ipsum test blablabla</p>
+        </div>-->
+        <h1 id="nom-salle">Mettre le titre de chaque salle en js</h1>
+
+        <div id="flex-pop-div">
+            <div id="pop-div">
+                <div id="titre-div">
+                    <div id="h2-pop-div"><h2 class="titre-pop-div"><!-- Titre div pop --></h2></div>
+                    <i class="fas fa-times fermer-div"></i>
+                </div>
+                <div id="paragraph-pop-div"><!-- Contenu de la div Pop --></div>
+            </div>
+        </div>
+
+        <div class = "texte_compteur">
+            Il vous reste
+            <br>
+            <span class="compteur">--</span>
+            <br>
+            déplacements
+        </div>
+    </div>
+
+
+
 
 
 
