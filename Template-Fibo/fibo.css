@@ -16,18 +16,6 @@
     }
 }
 
-/*salle 4
-.chiffre5,.chiffre8{
-    display:none;
-}
-
-/*salle 5
-.chiffre8{
-    display:none;
-}
-
-*/
-
 .fiboNumbers{
     width:80px;
     margin-left: auto;
@@ -54,7 +42,8 @@
 }
 
 #just-fibo{
-    position: absolute;
+    position: fixed;
+    top: 0;
     width :100%;
 }
 

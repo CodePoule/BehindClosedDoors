@@ -206,55 +206,10 @@ body{
     color: black;
     font-weight: bold;
 }
-/*SUITE FIBONACCI: reprendre le code par salle correspondante pour l'affichage des chiffres  */
-
-@keyframes stretch {
-    0% {
-        transform: scale(.3);
-        border-radius: 100%;
-    }
-
-    100% {
-        transform: scale(1.5);
-
-    }
-}
-
-
-.chiffre8 {
-    display: none;
-}
-
-#just-fibo{
-    width: 100%;
-    position: fixed;
-}
-
-.fiboNumbers{
-    width:80px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    justify-content: center;
-    animation: stretch 1.8s ease-out 0s alternate infinite none running;
-}
-
-.fibonacci{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    height:100px;
-    width: 800px;
-    font-size: 15px;
-    text-shadow:2px 2px 4px darkgoldenrod;
-    border: white 1px solid;
-    border-radius: 10px 10px;
-    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.75);
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .fibonacci{
     background: linear-gradient(#02133B, #0095FF) ;
+}
+#template{
+    position: absolute;
 }
