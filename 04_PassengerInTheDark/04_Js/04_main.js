@@ -5,8 +5,6 @@ let popDiv = document.querySelector("#pop-div"); // Div Pop up
 let titrePopDiv = document.querySelector(".titre-pop-div"); // Div titre de la pop up
 let pPopDiv = document.querySelector("#paragraph-pop-div"); // paragraphe de la pop up
 let closeDiv = document.querySelector(".fermer-div"); // bouton [X] de la pop up
-let chiffre5 = document.querySelector(".chiffre5");
-let chiffre8 = document.querySelector(".chiffre8");
 let suitefibo = document.querySelector("#just-fibo");
 
 // Nom de la salle
@@ -18,15 +16,11 @@ function togglevisi(item, State) {
     item.style.display = State;
 }
 
-// Masquage chiffre 5 et 8
-togglevisi(chiffre5, "none");
-togglevisi(chiffre8, "none");
-
 // Masquage du formulaire de saisie réponse
-togglevisi(divForm, "none");
+// togglevisi(divForm, "none");
 
 // Opacité initiale de la pop
-divForm.style.opacity = "0";
+// divForm.style.opacity = "0";
 
 // Objets réponses associées au url des vidéos ainsi que des titres et des textes de la div popup qui convient
 function ReponsesCharades (rep, urlVideo, titrePop, textePop){
@@ -88,6 +82,8 @@ function verifInputGost() {
         pPopDiv.innerHTML = "<p class='p-pop'>Bravo! La réponse est bien "+ repInput.value +"</p><p class='p-pop'>Tu peux maintenant passer à la salle suivante.</p>";
         togglevisi(popDiv, "");
         fadeIn(popDiv,5);
+        togglevisi(divForm, "");
+        fadeIn(suitefibo, 5);
         togglevisi(fleche, "");
     }
 
@@ -100,11 +96,12 @@ function verifInputGost() {
         pPopDiv.innerHTML = "<p class='p-pop'>Bravo! La réponse est bien "+ repInput.value +"</p><p class='p-pop'>Tu peux maintenant passer à la salle suivante.</p>";
         togglevisi(popDiv, "");
         fadeIn(popDiv,5);
+        fadeIn(suitefibo, 5);
         togglevisi(fleche, "");
     }
 
     if(repInput.value.toUpperCase() == time.rep.toUpperCase()){
-        alert("trop bien j'ai trouvé");
+        console.log("trop bien j'ai trouvé");
         // pop up temps ok
         console.log("titre");
         titrePopDiv.innerHTML = "Enigme Résolue!";
@@ -112,6 +109,7 @@ function verifInputGost() {
         pPopDiv.innerHTML = "<p class='p-pop'>Bravo! La réponse est bien "+ repInput.value +"</p><p class='p-pop'>Tu peux maintenant passer à la salle suivante.</p>";
         togglevisi(popDiv, "");
         fadeIn(popDiv,5);
+        fadeIn(suitefibo, 5);
         togglevisi(fleche, "");
     }
 }
@@ -191,11 +189,9 @@ function videoOnLoad(){
         fadeOut(suitefibo, 10)
     }, 15000);
     setTimeout(function () {
-        togglevisi(divForm, "");
         fadeIn(divForm,5);
-        fadeIn(suitefibo, 5);
         pauseVid();
-    }, 173650)
+    }, 173700)
     //SetTimeOut()
 }
 
@@ -279,6 +275,8 @@ fleche.addEventListener("click", function () {
 // Chrono Global
 let bar = new ldBar("#chrono");
 
+let temps = 100;
+
 // Save/restore Time à appeler quand victoire sur salle pour que fleche page suivante apparaisse
 function sauvegarder(){
     localStorage.setItem("tempsGlobal",temps);
@@ -324,4 +322,4 @@ function closeNav() {
     document.body.style.backgroundColor = "white";
 }
 
-document.onload = videoOnLoad(), recharger(), decrementation();
+document.onload = videoOnLoad(), recharger(), decrementation(), video.play();
