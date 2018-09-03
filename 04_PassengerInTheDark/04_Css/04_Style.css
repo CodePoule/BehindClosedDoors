@@ -66,3 +66,7 @@ body{
 #nom-salle{
     font-family: "Cardinal Alternate";
 }
+
+.fibonacci{
+    background: linear-gradient(#8AAADB, #E99801);
+}

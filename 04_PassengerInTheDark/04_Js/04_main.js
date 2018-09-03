@@ -5,6 +5,9 @@ let popDiv = document.querySelector("#pop-div"); // Div Pop up
 let titrePopDiv = document.querySelector(".titre-pop-div"); // Div titre de la pop up
 let pPopDiv = document.querySelector("#paragraph-pop-div"); // paragraphe de la pop up
 let closeDiv = document.querySelector(".fermer-div"); // bouton [X] de la pop up
+let chiffre5 = document.querySelector(".chiffre5");
+let chiffre8 = document.querySelector(".chiffre8");
+let suitefibo = document.querySelector("#just-fibo");
 
 // Nom de la salle
 let nomSalle = document.querySelector("#nom-salle");
@@ -14,6 +17,10 @@ nomSalle.innerHTML = "Passenger in the Dark";
 function togglevisi(item, State) {
     item.style.display = State;
 }
+
+// Masquage chiffre 5 et 8
+togglevisi(chiffre5, "none");
+togglevisi(chiffre8, "none");
 
 // Masquage du formulaire de saisie réponse
 togglevisi(divForm, "none");
@@ -30,9 +37,9 @@ function ReponsesCharades (rep, urlVideo, titrePop, textePop){
 
 
 // définitions des objets et des réponses à définir
-let cerbi = new ReponsesCharades("cerbere", "http://www.jeanlepeix.com/BehindClosedDoors/04_PassengerInTheDark/04_Video/04_Bg1.mp4");
-let anubis = new ReponsesCharades("anubis", "http://www.jeanlepeix.com/BehindClosedDoors/04_PassengerInTheDark/04_Video/04_Bg2.mp4");
-let time = new ReponsesCharades("temps", "http://www.jeanlepeix.com/BehindClosedDoors/04_PassengerInTheDark/04_Video/04_Bg3.mp4");
+let cerbi = new ReponsesCharades("cerbere", "04_Video/04_Bg1.mp4");
+let anubis = new ReponsesCharades("anubis", "04_Video/04_Bg2.mp4");
+let time = new ReponsesCharades("temps", "04_Video/04_Bg3.mp4");
 
 // Fonction Play Pause
 let video = document.querySelector("#background");
@@ -181,8 +188,12 @@ function videoOnLoad(){
     shuffle(videoArray);
     video.innerHTML = "<source src='"+ videoArray[1] +"'>";
     setTimeout(function () {
+        fadeOut(suitefibo, 10)
+    }, 15000);
+    setTimeout(function () {
         togglevisi(divForm, "");
         fadeIn(divForm,5);
+        fadeIn(suitefibo, 5);
         pauseVid();
     }, 173650)
     //SetTimeOut()
