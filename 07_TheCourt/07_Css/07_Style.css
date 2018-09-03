@@ -24,11 +24,14 @@ body{
 }
 /*animation sur le coeur */
 @keyframes heartbeat {
-    from{
+    0%{
         transform: scale(1.0);
     }
-    to {
+    50% {
         transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1.0);
     }
 }
 
