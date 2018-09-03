@@ -1,3 +1,5 @@
+let suitefibo = document.querySelector("#just-fibo");
+
 // Nom de la salle
 let nomSalle = document.querySelector("#nom-salle");
 nomSalle.innerHTML = "Piece Of Work";
@@ -81,6 +83,12 @@ function init() {
     img = new Image();
     img.addEventListener('load',onImage,false);
     img.src = imgArray[0];
+    setTimeout(function () {
+        fadeOut(suitefibo, 10);
+    }, 10000);
+    setTimeout(function (){
+        togglevisi(suitefibo, "none");
+    }, 12000);
 }
 
 // Configuartion Canvas
@@ -306,7 +314,9 @@ function gameOver(){
         // passage à la salle suivante
         pPopDiv.innerHTML = "<p id='p-div'>Tu peux maintenant passer à la salle suivante.</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
         togglevisi(popDiv, "");
+        togglevisi(suitefibo,"");
         fadeIn(popDiv,5);
+        fadeIn(suitefibo, 5);
     }
     if (puzzleFacile == true && puzzleMoyen == false && puzzleDifficile == false){
         puzzleMoyen = true;
@@ -371,7 +381,7 @@ function decrementation_vie() {
             console.log("titre");
             titrePopDiv.innerHTML = "Perdu !"; // TITRE DE LA POP UP
             console.log("regles");
-            pPopDiv.innerHTML = "<p id='p-div'>J'ai confiance en toi, essais encore...\n</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+            pPopDiv.innerHTML = "<p id='p-div'>J'ai confiance en toi, essaie encore...\n</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
             togglevisi(popDiv, "");
             fadeIn(popDiv,5);
             if (puzzleFacile == false) {
@@ -543,4 +553,5 @@ closeDiv.addEventListener("click", function (){
         console.log("pop out 2")
     }, 1000)
 });
+
 document.onload = recharger(), decrementation();
