@@ -1,14 +1,8 @@
-/*body{*/
-    /*display: flex;*/
-    /*background: url("../07_img/salle07bg.png");*/
-/*}*/
 body{
     cursor: url("../07_img/search.png"), pointer;
 
 }
 #bg{
-    /*height: 100%;*/
-    /*width: 100%;*/
     z-index: -10000000;
     position:fixed;
     bottom:0;

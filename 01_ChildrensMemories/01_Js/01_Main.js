@@ -223,18 +223,10 @@ function lvl2() {
             // decrementation de la vie
             vie--;
             console.log(vie);
-            // localStorage.setItem("VieEnregistree", vie);
-            // sauvegarder();
-            // window.location.reload();
             console.log("vie: " + vie);
-            // vie = localStorage.getItem("VieEnregistree");
-            // recharger();
-            // decrementation();
             decrementation_vie();
             compteurNiveau = 1;
             document.onload = lvl1();
-
-
         }
 
     })
@@ -290,13 +282,7 @@ function lvl3() {
             // decrementation de la vie
             vie--;
             console.log(vie);
-            // localStorage.setItem("VieEnregistree", vie);
-            // sauvegarder();
-            // window.location.reload();
             console.log("vie: " + vie);
-            // vie = localStorage.getItem("VieEnregistree");
-            // recharger();
-            // decrementation();
             decrementation_vie();
             compteurNiveau = 1;
             document.onload = lvl1();
@@ -308,7 +294,7 @@ function lvl3() {
 // Event lors de la victoire sur chaque page
 fleche.addEventListener("click", function () {
     sauvegarder();
-    document.location.href = "../02_QuestionMark/02_Index_v3.html"; // variable à redéfinir sur chaque page pour aller à la page suivante : chaine de charctère/lien relatif
+    document.location.href = "../02_QuestionMark/02_Index.html"; // variable à redéfinir sur chaque page pour aller à la page suivante : chaine de charctère/lien relatif
 });
 
 // Chrono Global
@@ -400,5 +386,3 @@ closeDiv.addEventListener("click", function () {
 
 
 document.onload = lvl1();
-//document.onload = lvl2();
-//document.onload = lvl3();

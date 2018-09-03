@@ -6,9 +6,13 @@
         border-radius: 100%;
     }
 
-    100% {
+    50% {
         transform: scale(1.5);
 
+    }
+    100% {
+        transform: scale(.3);
+        border-radius: 100%;
     }
 }
 
@@ -40,7 +44,7 @@
     margin-right: auto;
     text-align: center;
     justify-content: center;
-    animation: stretch 1.8s ease-out 0s alternate infinite none running;
+    animation: stretch 3s ease-out 0s alternate infinite none running;
 }
 
 .fibonacci{
@@ -51,7 +55,6 @@
     height:100px;
     width: 800px;
     font-size: 15px;
-    /*background: #E2C173 ; à définir sur chaque CSS de salle */
     text-shadow:2px 2px 4px darkgoldenrod;
     border: white 1px solid;
     border-radius: 10px 10px;
