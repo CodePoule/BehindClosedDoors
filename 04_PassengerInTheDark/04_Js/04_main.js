@@ -17,10 +17,10 @@ function togglevisi(item, State) {
 }
 
 // Masquage du formulaire de saisie réponse
-// togglevisi(divForm, "none");
+togglevisi(divForm, "none");
 
 // Opacité initiale de la pop
-// divForm.style.opacity = "0";
+divForm.style.opacity = "0";
 
 // Objets réponses associées au url des vidéos ainsi que des titres et des textes de la div popup qui convient
 function ReponsesCharades (rep, urlVideo, titrePop, textePop){
@@ -185,6 +185,7 @@ closeDiv.addEventListener("click", function (){
 function videoOnLoad(){
     shuffle(videoArray);
     video.innerHTML = "<source src='"+ videoArray[1] +"'>";
+    video.play();
     setTimeout(function () {
         fadeOut(suitefibo, 10)
     }, 15000);
@@ -322,4 +323,4 @@ function closeNav() {
     document.body.style.backgroundColor = "white";
 }
 
-document.onload = videoOnLoad(), recharger(), decrementation(), video.play();
+document.onload = videoOnLoad(), recharger(), decrementation();
