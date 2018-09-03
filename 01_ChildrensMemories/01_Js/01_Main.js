@@ -1,7 +1,7 @@
 //JS CHILDREN MEMORIES
 // Nom de la salle
 let nomSalle = document.querySelector("#nom-salle");
-nomSalle.innerHTML = "Childrens Memories";
+nomSalle.innerHTML = "Childrens' Memories";
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
