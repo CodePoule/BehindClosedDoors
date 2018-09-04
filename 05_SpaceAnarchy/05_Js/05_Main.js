@@ -189,7 +189,7 @@ $("div[id*='button']").on("click", function () {
         // event.which == 1 <=> clic de la souris
         if (event.which == 1) {
             // on recucupe le son lié au bouton sur lequel on vient de cliquer dans le html (this.id<=> buttonColor)
-            // la methode get(0).play permet de jouer l'audio selectionné
+            // la methode get(0).play permet de jouer l'06_Audio selectionné
             // cloneNode() permet de rejouer le son si necessaire
             $("#sound" + this.id).get(0).cloneNode().play();
             console.log("id " + this.id);
@@ -389,7 +389,7 @@ function playMemory() {
     tempColor = memoryArray[memoryArrayCounter];
     // on concatene "#soundbutton" et la valeur de tempColor pour récuperer le son correspondant dans le fichier html
     // ca joue un son different pour chque bouton
-    // la methode get(0).play permet de jouer l'audio selectionné
+    // la methode get(0).play permet de jouer l'06_Audio selectionné
     // cloneNode() permet de rejouer le son si necessaire
     $("#soundbutton" + tempColor).get(0).cloneNode().play();
 

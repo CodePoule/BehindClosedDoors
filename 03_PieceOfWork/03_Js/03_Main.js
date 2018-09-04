@@ -379,7 +379,7 @@ function decrementation_vie() {
             togglevisi(heart1, "none");
             console.log("boucle vie 2");
             console.log("titre");
-            titrePopDiv.innerHTML = "Perdu !"; // TITRE DE LA POP UP
+            titrePopDiv.innerHTML = "Tu as atteint le nombre maximum de déplacements !"; // TITRE DE LA POP UP
             console.log("regles");
             pPopDiv.innerHTML = "<p id='p-div'>J'ai confiance en toi, essaie encore...\n</p>"; // CONTENU / PARAGRAPHE DE LA POP UP
             togglevisi(popDiv, "");

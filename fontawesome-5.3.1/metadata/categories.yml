@@ -3,7 +3,7 @@ accessibility:
     - accessible-icon
     - american-sign-language-interpreting
     - assistive-listening-systems
-    - audio-description
+    - 06_Audio-description
     - blind
     - braille
     - closed-captioning
@@ -121,7 +121,7 @@ arrows:
   label: Arrows
 audio-video:
   icons:
-    - audio-description
+    - 06_Audio-description
     - backward
     - broadcast-tower
     - circle
@@ -132,7 +132,7 @@ audio-video:
     - expand-arrows-alt
     - fast-backward
     - fast-forward
-    - file-audio
+    - file-06_Audio
     - file-video
     - film
     - forward
@@ -647,7 +647,7 @@ files:
     - file
     - file-alt
     - file-archive
-    - file-audio
+    - file-06_Audio
     - file-code
     - file-excel
     - file-image

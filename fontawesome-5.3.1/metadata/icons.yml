@@ -6381,7 +6381,7 @@ headphones:
   label: headphones
   search:
     terms:
-      - audio
+      - 06_Audio
       - listen
       - music
       - sound
@@ -6395,7 +6395,7 @@ headphones-alt:
   label: Headphones Alt
   search:
     terms:
-      - audio
+      - 06_Audio
       - listen
       - music
       - sound
@@ -6409,7 +6409,7 @@ headset:
   label: Headset
   search:
     terms:
-      - audio
+      - 06_Audio
       - gamer
       - gaming
       - listen
@@ -13416,7 +13416,7 @@ volume-down:
   label: Volume Down
   search:
     terms:
-      - audio
+      - 06_Audio
       - lower
       - music
       - quieter
@@ -13433,7 +13433,7 @@ volume-off:
   label: Volume Off
   search:
     terms:
-      - audio
+      - 06_Audio
       - music
       - mute
       - sound
@@ -13448,7 +13448,7 @@ volume-up:
   label: Volume Up
   search:
     terms:
-      - audio
+      - 06_Audio
       - higher
       - louder
       - music

@@ -1,7 +1,7 @@
 
 let vie = 3;
 
-//variables audio
+//variables 06_Audio
 let blueScreenScreamOfDeath = document.querySelector('.bsod');
 
 // Nom de la salle
