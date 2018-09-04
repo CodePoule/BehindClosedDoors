@@ -59,7 +59,7 @@ function initializeClock(id, endtime) {
     }
 
     updateClock();
-    let timeinterval = setInterval(updateClock, 1000);
+    // let timeinterval = setInterval(updateClock, 1000);
 }
 //réinitialisation
 let deadline = new Date(Date.parse(new Date()) + 60 * 1000);
