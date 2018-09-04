@@ -1,6 +1,7 @@
 body{
     cursor: url("../07_img/search.png"), pointer;
-
+    background-image: url("../07_img/salle07bg.png");
+    overflow: hidden;
 }
 #bg{
     z-index: -10000000;
@@ -233,7 +234,7 @@ body{
 }
 
 #pop-div{
-    background-image: url("../07_img/BackgroungDivPop.png");
+    background-image: url("../../Template/Img/BackgroungDivPop.png");
     width: 750px;
     height: 430px;
     display: flex;
