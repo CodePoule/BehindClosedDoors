@@ -191,6 +191,7 @@ function videoOnLoad(){
     }, 15000);
     setTimeout(function () {
         fadeIn(divForm,5);
+        togglevisi(divForm, "");
         pauseVid();
     }, 173700)
     //SetTimeOut()
