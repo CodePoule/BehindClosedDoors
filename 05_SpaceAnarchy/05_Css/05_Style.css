@@ -2,7 +2,7 @@
 
 body{
     background: url("../05_Img/05_Bg.jpg");
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 .noSelect {
