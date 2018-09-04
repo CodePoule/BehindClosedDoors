@@ -1,5 +1,19 @@
 body{
     overflow: hidden;
+    background: black;
+}
+
+.lecture{
+    font-size: 80px;
+    color: white;
+    opacity: 0.7;
+}
+
+#play{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1080px;
 }
 
 #background{

@@ -6,6 +6,7 @@ let titrePopDiv = document.querySelector(".titre-pop-div"); // Div titre de la p
 let pPopDiv = document.querySelector("#paragraph-pop-div"); // paragraphe de la pop up
 let closeDiv = document.querySelector(".fermer-div"); // bouton [X] de la pop up
 let suitefibo = document.querySelector("#just-fibo");
+let btnLecture = document.querySelector(".lecture");
 
 // Nom de la salle
 let nomSalle = document.querySelector("#nom-salle");
@@ -131,7 +132,6 @@ function shuffle(index) {
         [index[i - 1], index[nbH]] = [index[nbH], index[i - 1]];
     }
 }
-
 
 // Opacité initiale de la pop
 popDiv.style.opacity = "0";
@@ -323,4 +323,9 @@ function closeNav() {
     document.body.style.backgroundColor = "white";
 }
 
-document.onload = videoOnLoad(), recharger(), decrementation();
+btnLecture.addEventListener("click", function () {
+    togglevisi(btnLecture, "none");
+    videoOnLoad();
+});
+
+document.onload = recharger(), decrementation();
