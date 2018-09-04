@@ -273,10 +273,9 @@ function lvl3() {
             console.log("titre");
             titrePopDiv.innerHTML = "Enigme Résolue"; // TITRE DE LA POP UP
             console.log("regles");
-            pPopDiv.innerHTML = "<p id='p-div'>Facile comme 1 2 3! La salle suivante t’attends ! </p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+            pPopDiv.innerHTML = "<p id='p-div'>Facile comme 1 2 3! La salle suivante t’attend ! </p>"; // CONTENU / PARAGRAPHE DE LA POP UP
             togglevisi(popDiv, "");
             fadeIn(popDiv, 5);
-            //document.onload = ();
         }
         else if (saisie3Utilisateur.value !== resultatlv3 && compteurNiveau == 3) {
             // decrementation de la vie
