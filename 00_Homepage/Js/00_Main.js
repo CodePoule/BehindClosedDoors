@@ -82,13 +82,13 @@ btnRules.addEventListener("click", function () {
 btnOwlSquad.addEventListener("click", function () {
     console.log("titre Team");
     titrePopDiv.innerHTML = "Voici Owl'Squad !";
-    pPopDiv.innerHTML = "<img  src='00_Homepage/Img/cécéresized.png' alt=''> - Céline: DR en Algotithmie" +
-        "<img  src='00_Homepage/Img/meresized.png' alt=''> - Gwen: Scrum Master <br>" +
-        "<img  src='00_Homepage/Img/jeanresized.png' alt=''> - Jean: Directeur Artistique" +
-        "<img  src='00_Homepage/Img/marcyresized.png' alt=''> -Marcy: Graphiste <br>" +
-        "<img  src='00_Homepage/Img/marieresized.png' alt=''> - Marie:  Consultante en géo-spatiale" +
-        "<img  src='00_Homepage/Img/shéraresized.png' alt=''> - Shera: Product Owner <br>"+
-    "<img  src='00_Homepage/Img/remiresized.png' alt=''> - Remi: ben c'est Rémi "
+    pPopDiv.innerHTML = "<div class='team-member'><img  src='00_Homepage/Img/cécéresized.png' class='member-img'> <b>Céline</b>DR en Algotithmie</div>" +
+        "<div class='team-member'><img  src='00_Homepage/Img/marieresized.png' class='member-img'> <b>Marie</b> Consultante en géo-spatiale</div>" +
+        "<div class='team-member'><img  src='00_Homepage/Img/jeanresized.png' class='member-img'> <b>Jean</b>Directeur Artistique</div>" +
+        "<div class='team-member'><img  src='00_Homepage/Img/marcyresized.png' class='member-img'><b>Marcy</b>Graphiste </div>" +
+        "<div class='team-member'><img  src='00_Homepage/Img/meresized.png' class='member-img'> <b>Gwen</b>Scrum Master </div>" +
+        "<div class='team-member'><img  src='00_Homepage/Img/remiresized.png' class='member-img'> <b>Remi</b>Owl Master</div>"+
+    "<div class='team-member'><img  src='00_Homepage/Img/shéraresized.png' class='member-img'> <b>Shera</b>Product Owner </div>"
 
     ;
     togglevisi(popDiv, "");

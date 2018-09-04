@@ -120,4 +120,21 @@ h1, #titre{
 
 #paragraph-pop-div{
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.team-member{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 30px;
+    text-align: center;
+    width: 100px;
+}
+
+.member-img{
+    width: 75px;
+    margin: auto;
 }
