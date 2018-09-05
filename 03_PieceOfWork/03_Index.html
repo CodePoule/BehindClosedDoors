@@ -2,9 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Piece of Work</title>
+    <link rel="stylesheet" href="03_CSS/03_Style.css">
+    <script src="../Template/Template_Js/Template_Loading-bar-API.js"></script>
+    <link rel="stylesheet" href="../fontawesome-5.3.1/css/all.css">
+    <link rel="stylesheet" href="../Template/Template_Css/Template_Style.css">
+    <link rel="stylesheet" href="../Template-Fibo/fibo.css">
 </head>
-<body>
+<body onload="init()">
+<audio src="03_Audio/03_audiobg.mp3" type="MP3/Audio" autoplay loop></audio>
+    <div id="template">
+
+        <!--Fibonacci-->
+        <div id="just-fibo">
+            <div class = "fibonacci">
+                <div class = "chiffre1"><img src="../Template-Fibo/Img/chiffre_1.png" class="fiboNumbers"></div>
+                <div class = "chiffre2"><img src="../Template-Fibo/Img/chiffre_2.png" class="fiboNumbers"></div>
+            </div>
+        </div>
+        <!--Règles des salles-->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+            <p>Pour finir cette salle, tu devras completer correctement un puzzle, il y a trois niveaux de difficulté. <br>
+                Attention ! tu as un nombre de déplacements limités.</p>
+            <p>Pour commencer ou déplacer les pièces un double-clic te sera nécessaire.</p>
+        </div>
+
+        <!--Bouton ?-->
+        <div id="main">
+            <span onclick="openNav()"><i id="iconRules" class="far fa-question-circle"></i></span>
+        </div>
+
+        <div id="temp-right">
+            <!--Chrono Global-->
+            <div id="chrono"
+                 data-preset="bubble"
+                 class="ldBar label-center"
+                 data-value="100"
+                 data-pattern-size="100">
+            </div>
+            <!--vie-->
+            <div class="vie">
+                <img src="../Template/Img/Heart.png" height="76" width="76" id="heart1"/>
+                <img src="../Template/Img/Heart.png" height="76" width="76" id="heart2"/>
+                <img src="../Template/Img/Heart.png" height="76" width="76" id="heart3"/>
+            </div>
+        </div>
+
+        <!--fleche salle suivante-->
+        <div class="fleche">
+            <i class="far fa-arrow-alt-circle-right"></i>
+        </div>
+
+        <h1 id="nom-salle">Mettre le titre de chaque salle en js</h1>
+
+        <div id="flex-pop-div">
+            <div id="pop-div">
+                <div id="titre-div">
+                    <div id="h2-pop-div"><h2 class="titre-pop-div"><!-- Titre div pop --></h2></div>
+                    <i class="fas fa-times fermer-div"></i>
+                </div>
+                <div id="paragraph-pop-div"><!-- Contenu de la div Pop --></div>
+            </div>
+        </div>
+
+        <div class = "texte_compteur">
+            Il vous reste
+            <br>
+            <span class="compteur">--</span>
+            <br>
+            déplacements
+        </div>
+    </div>
+
+
+<!--puzzle-->
+    <div id="flex-container">
+        <div id="puzzle-container">
+            <canvas id="puzzle" style="border: 0"></canvas>
+        </div>
+    </div>
+
+    <!-- Script Puzzle -->
+    <script src="../Template/Template_Js/jquery-3.3.1.min.js"></script>
+    <script src="03_Js/03_Main.js"></script>
 
 </body>
 </html>

@@ -3,12 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <title>The Court</title>
+
+    <script src="../Template/Template_Js/Template_Loading-bar-API.js"></script>
+
     <link rel="stylesheet" href="07_Css/07_Style.css">
+    <link rel="stylesheet" href="../fontawesome-5.3.1/css/all.css">
 </head>
 <body>
 
-<!--Image du coeur-->
-<img src="07_img/heart.png" class="life" alt="heart">
+<audio src="07_Audio/07_audiobg.mp3" type="MP3/Audio" autoplay loop id="musique-salle-7"></audio>
+
+<video id="end" type="video/mp4" autoplay>
+
+</video>
+
+<div id="container">
+    <!--Règles des salles-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <p>MUAHAHAHAHAHAHA ! ! ! ! <br> Tu as été dupé, regarde autour de toi dans l'espoir de trouver un moyen de
+            sortir.
+            Tes souvenirs peuvent t'aider.</p>
+    </div>
+
+    <!--Bouton ?-->
+    <div id="main">
+        <span onclick="openNav()"><i id="iconRules" class="far fa-question-circle"></i></span>
+    </div>
+
+    <!--Chrono Global-->
+    <div id="chrono"
+         data-preset="bubble"
+         class="ldBar label-center"
+         data-value="100"
+         data-pattern-size="100">
+    </div>
+
+    <!--Image du coeur-->
+    <img id="coeur_battement" src="../Template/Img/Heart.png" class="life" alt="heart" height="150" width="150">
+
+    <!--Tableau central où il faut positionner les items-->
+    <div class="tableau_central" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+    <!--Image item salle 1-->
+    <div class="item_salle1">
+        <img id="image_item_salle1" src="07_img/item_salle1.png" draggable="true" ondragstart="drag(event)"
+             height="120"
+             width="120"/>
+    </div>
+
+    <!--Image item salle 2-->
+    <div class="item_salle2">
+        <img id="image_item_salle2" src="07_img/item_salle2.png" draggable="true" ondragstart="drag(event)"
+             height="80"
+             width="91"/>
+    </div>
+
+
+    <!--Image item salle 3-->
+    <div class="item_salle3">
+        <img id="image_item_salle3" src="07_img/item_salle3.png" draggable="true" ondragstart="drag(event)"
+             height="100"
+             width="100"/>
+    </div>
+
+    <!--Image item salle 4-->
+    <div class="item_salle4">
+        <img id="image_item_salle4" src="07_img/item_salle4.png" draggable="true" ondragstart="drag(event)"
+             height="80"
+             width="100"/>
+    </div>
+
+    <!--Image item salle 5-->
+    <div class="item_salle5">
+        <img id="image_item_salle5" src="07_img/item_salle5.png" draggable="true" ondragstart="drag(event)"
+             height="80"
+             width="96"/>
+    </div>
+
+    <!--Image item salle 6-->
+    <div class="item_salle6">
+        <img id="image_item_salle6" src="07_img/item_salle6.png" draggable="true" ondragstart="drag(event)"
+             height="80"
+             width="80"/>
+    </div>
+
+    <h1 id="nom-salle">Mettre le titre de chaque salle en js</h1>
+
+</div>
+
+<div id="flex-pop-div">
+    <div id="pop-div">
+        <div id="titre-div">
+            <div id="h2-pop-div"><h2 class="titre-pop-div"><!-- Titre div pop --></h2></div>
+            <i class="fas fa-times fermer-div"></i>
+        </div>
+        <div id="paragraph-pop-div"><!-- Contenu de la div Pop --></div>
+    </div>
+</div>
+
+<script src="../Template/Template_Js/jquery-3.3.1.min.js"></script>
+<script src="07_Js/07_Main.js"></script>
 
 
 </body>

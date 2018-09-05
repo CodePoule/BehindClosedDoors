@@ -1,1 +1,75 @@
 /* CSS CHILDREN'S MEMORY */
+
+body {
+    transition: background-color .5s;
+    background: url("../01_Img/01_ChildrenBedroom.jpg") no-repeat center fixed;
+    color: #5D544B;
+    background-size: cover;
+    font-family: 'Indie Flower', cursive;
+    overflow: hidden;
+}
+#res1,#res2,#res3{
+    font-size: 30px;
+    font-family: 'Indie Flower', cursive;
+}
+
+.valider{
+    margin-left: 3px;
+    color: #5D544B;
+    background-color:#C1E5DF;
+    border-color: #82B4B3;
+    border-radius: 1px;
+    font-size: 30px;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+}
+
+.valider:hover{
+    color: white;
+    background:#82B4B3;
+}
+
+
+#redim{
+    width: 150px;
+}
+
+.childrensplay{
+    padding-top: 40px;
+    position:absolute;
+    top: 12%;
+    left : 30%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin:auto;
+    background-color: #FDF2EE;
+    height : 700px;
+    width :800px;
+    border: 5px #5D544B solid;
+    font-size: 50px;
+    font-family: 'Indie Flower', cursive;
+}
+
+#flex-container {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.clicklink1{
+    font-family: 'Goudy Bookletter 1911', serif;
+    border-radius: 1px;
+    font-size: 15px;
+    color: black;
+    background: white ;
+    font-weight: bold;
+}
+
+.clicklink1:hover{
+    color: white;
+    background: darkgoldenrod;
+}

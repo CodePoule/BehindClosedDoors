@@ -1,0 +1,39 @@
+/* CSS 03 A piece of Work */
+body{
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: url("../03_Img/03_bg.jpg");
+}
+
+#flex-container{
+
+}
+
+#puzzle{
+    width: 100%;
+}
+
+.texte_compteur {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    user-select: none;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.compteur {
+    text-align: center;
+    color: white;
+}
+
+.fibonacci{
+    background: linear-gradient(#593728, #90A530);
+}
