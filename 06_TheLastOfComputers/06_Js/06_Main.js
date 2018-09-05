@@ -3,6 +3,7 @@ let vie = 3;
 
 //variables 06_Audio
 let blueScreenScreamOfDeath = document.querySelector('.bsod');
+let audioBg = document.querySelector("#music-salle-6");
 
 // Nom de la salle
 let nomSalle = document.querySelector("#nom-salle");
@@ -59,7 +60,7 @@ function initializeClock(id, endtime) {
     }
 
     updateClock();
-    // let timeinterval = setInterval(updateClock, 1000);
+    let timeinterval = setInterval(updateClock, 1000);
 }
 //réinitialisation
 let deadline = new Date(Date.parse(new Date()) + 60 * 1000);
@@ -214,6 +215,7 @@ function fakeVictory(){
     if (inputNumber.value == 13){
         // POP UP ecran bleu
         console.log("lol at u");
+        audioBg.pause();
         togglevisi(popDivBlueScreen, "");
         blueScreenScreamOfDeath.play();
         fadeIn(popDivBlueScreen,5);

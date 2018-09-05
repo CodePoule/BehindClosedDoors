@@ -1,4 +1,6 @@
-let endGameVideo = document.querySelector("#end");
+let endGameVideo = document.querySelector("#end"); // Vidéo de la victoire
+let audioBg = document.querySelector("#musique-salle-7"); // Musique de la salle
+let container = document.querySelector("#container"); // Div de la salle sans la vidéo de fin, l'audio et la pop-up
 
 // Nom de la salle
 let nomSalle = document.querySelector("#nom-salle");
@@ -195,15 +197,28 @@ function drop(ev) {
     }
     if (compteurOrdre == 7){
         // vidéo pop end
+        audioBg.pause();
         togglevisi(endGameVideo,"");
         fadeIn(endGameVideo,15);
+        fadeOut(container, 10);
+        togglevisi(container, "none");
         endGameVideo.innerHTML = "<source src='07_Video/07_End.mp4'>";
+        setTimeout(function (){
+            console.log("titre");
+            titrePopDiv.innerHTML = "Fin !"; // TITRE DE LA POP UP
+            console.log("regles");
+            pPopDiv.innerHTML = "<p id='p-div'>Tu as gagné le droit de recommencer...<br><br>" +
+                "<button>" +
+                    "<a href='../index.html' class='links'>Retour à l'Accueil</a>" +
+                "</button></p>"; // CONTENU / PARAGRAPHE DE LA POP UP
+            togglevisi(popDiv, "");
+            fadeIn(popDiv, 5)
+        }, 17000);
     }
 
     if (vie == 0) {
         console.log("la vie est égale à 0");
         togglevisi(coeur_battement, "none");
-
         console.log("titre");
         titrePopDiv.innerHTML = "Game Over !"; // TITRE DE LA POP UP
         console.log("regles");
